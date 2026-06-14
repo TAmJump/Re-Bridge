@@ -11,8 +11,8 @@ routes = [
 # Resend で認証済みの送信元に合わせる（tamjump.com が認証済みならこのままでOK）
 FROM_EMAIL = "Re-Bridge <noreply@tamjump.com>"
 
-# ── 任意：リードをD1にも保存したい場合だけ下を有効化し database_id を貼る ──
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "rebridge"
-# database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+# D1（必須）── JIN作業: `npx wrangler d1 create rebridge` で出た database_id を下に貼る
+[[d1_databases]]
+binding = "DB"
+database_name = "rebridge"
+database_id = "PASTE_DATABASE_ID_HERE"
