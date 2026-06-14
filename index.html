@@ -88,11 +88,12 @@
   .rp-stage.swap .rp-term{opacity:0}
   .rp-before.swap .rp-term{transform:translate(-6px,6px)}
   .rp-after.swap .rp-term{transform:translate(6px,-6px)}
-  .rp-v{width:clamp(120px,17vw,210px);height:auto;overflow:visible}
-  .rp-arm{stroke:var(--ink);stroke-width:4;fill:none;stroke-linecap:round}
-  .rp-arm.r{stroke:var(--line-strong)}
-  .rp-flow{stroke:var(--accent);stroke-width:4;fill:none;stroke-linecap:round;stroke-dasharray:120;stroke-dashoffset:120}
-  .rp-stage.flow .rp-flow{transition:stroke-dashoffset .9s ease;stroke-dashoffset:0}
+  .rp-v,.rp-rail{width:clamp(124px,18vw,216px);height:auto;overflow:visible}
+  .rp-before{align-self:end}
+  .rp-after{align-self:start}
+  .rp-track{stroke:var(--line-strong);stroke-width:3.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .rp-flow{stroke:var(--accent);stroke-width:3.8;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:340;stroke-dashoffset:340}
+  .rp-stage.flow .rp-flow{transition:stroke-dashoffset 1s ease;stroke-dashoffset:0}
   .rp-dot{fill:var(--accent);transform-origin:center;transform-box:fill-box}
   .rp-stage.pulse .rp-dot{animation:pulse .6s ease}
   @keyframes pulse{0%{transform:scale(1)}40%{transform:scale(1.5)}100%{transform:scale(1)}}
@@ -145,8 +146,14 @@
   .founder-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:56px;align-items:start}
   .fg-l{position:sticky;top:96px}
   .fg-plate{position:relative;border:1px solid var(--line);overflow:hidden;aspect-ratio:4/5;margin:0}
-  .fg-plate img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.86) contrast(1.02)}
-  .fg-plate figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(transparent,rgba(20,34,46,.82));color:#fff;font-family:var(--inter);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+  .fg-plate img{width:100%;height:100%;object-fit:cover;display:block}
+  .fg-rail{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .fg-rail path{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+  .fg-rail .t{stroke:rgba(255,255,255,.92);stroke-width:5}
+  .fg-rail .b{stroke:var(--accent-glow);stroke-width:2.4;stroke-dasharray:430;stroke-dashoffset:430}
+  .fg-plate.in .fg-rail .b{transition:stroke-dashoffset 1.5s cubic-bezier(.4,0,.1,1) .25s;stroke-dashoffset:0}
+  .fg-plate figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 18px 15px;background:linear-gradient(transparent,rgba(11,21,31,.9));color:#fff;font-family:var(--inter);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+  .fg-plate figcaption span{color:var(--accent-glow);letter-spacing:.1em}
   .fg-sign{margin-top:22px}
   .fg-sign .nm{font-family:var(--frau);font-size:19px;letter-spacing:.02em}
   .fg-sign .ro{font-family:var(--inter);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-top:5px}
@@ -232,6 +239,7 @@
   .foot-brand .bn{font-family:var(--inter);font-size:23px;font-weight:700;display:inline-flex;align-items:center;color:var(--ink)}
   .foot-brand .bn em{font-style:normal;color:var(--accent)}
   .foot-brand .bn .hy{margin:0 2px}
+  .foot-brand .bn .fmark{margin-right:9px}
   .foot-brand p{color:var(--ink-soft);font-size:14px;line-height:1.9;margin-top:16px;max-width:30em}
   .foot-links{display:flex;gap:60px;flex-wrap:wrap}
   .foot-col h4{font-family:var(--inter);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 16px;font-weight:600}
@@ -267,7 +275,7 @@
   }
   @media(prefers-reduced-motion:reduce){
     *{transition:none!important;animation:none!important}
-    .reveal{opacity:1;transform:none}.rp-flow{stroke-dashoffset:0}
+    .reveal{opacity:1;transform:none}.rp-flow,.fg-rail .b{stroke-dashoffset:0}
   }
 </style>
 </head>
@@ -276,10 +284,14 @@
 <header class="nav" id="nav">
   <div class="navwrap">
     <a class="brand" href="#top" aria-label="Re-Bridge">
-      <svg class="mark" width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
-        <path d="M22 28 L50 74" stroke="#14222e" stroke-width="5.4" stroke-linecap="round"/>
-        <path d="M78 28 L50 74" stroke="#14222e" stroke-width="5.4" stroke-linecap="round"/>
-        <circle cx="50" cy="84" r="7.4" fill="#1c84cf"/>
+      <svg class="mark" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="5" y="5" width="90" height="90" rx="15" fill="#16242e"/>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 63 L40 63 L57 45 L83 45" stroke="#eef5fb" stroke-width="6"/>
+          <path d="M17 53 L40 53 L57 35 L83 35" stroke="#eef5fb" stroke-width="6"/>
+          <path d="M17 63 L40 63 L57 45 L83 45" stroke="#54a8e2" stroke-width="3.8"/>
+          <path d="M17 53 L40 53 L57 35 L83 35" stroke="#54a8e2" stroke-width="3.8"/>
+        </g>
       </svg>
       <span class="bn"><em>Re</em><svg class="hy" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true"><line x1="1" y1="9.5" x2="12" y2="1.5" stroke="#1c84cf" stroke-width="2.2" stroke-linecap="round"/></svg>Bridge</span>
     </a>
@@ -307,11 +319,11 @@
         <span class="rp-tag">こう見える</span>
         <span class="rp-term" id="rpBefore">赤字会社</span>
       </div>
-      <svg class="rp-v" viewBox="0 0 200 150" aria-hidden="true">
-        <path class="rp-arm" d="M30 18 L100 108"/>
-        <path class="rp-arm r" d="M170 18 L100 108"/>
-        <path class="rp-flow" id="rpFlow" d="M100 108 L170 18"/>
-        <circle class="rp-dot" cx="100" cy="124" r="9"/>
+      <svg class="rp-rail" viewBox="0 0 200 120" aria-hidden="true">
+        <path class="rp-track" d="M14 92 L64 92 L114 50 L188 50"/>
+        <path class="rp-track" d="M14 80 L64 80 L114 38 L188 38"/>
+        <path class="rp-flow" id="rpFlow" d="M14 86 L64 86 L114 44 L188 44"/>
+        <circle class="rp-dot" cx="188" cy="44" r="7.5"/>
       </svg>
       <div class="rp-side rp-after" id="rpAfterSide">
         <span class="rp-tag">こう変わる</span>
@@ -408,7 +420,11 @@
       <div class="fg-l">
         <figure class="fg-plate reveal">
           <img src="assets/night-desk.jpg" alt="深夜、積まれた請求書と通帳" loading="lazy" />
-          <figcaption>資金繰りの夜 ／ 2:14 AM</figcaption>
+          <svg class="fg-rail" viewBox="0 0 200 250" preserveAspectRatio="none" aria-hidden="true">
+            <path class="t" d="M-12 198 L74 198 L122 116 L212 116"/>
+            <path class="b" d="M-12 198 L74 198 L122 116 L212 116"/>
+          </svg>
+          <figcaption>資金繰りの夜 ／ 2:14 AM <span>― ここから、引き上げる。</span></figcaption>
         </figure>
         <div class="fg-sign reveal" data-d="1">
           <div class="nm">JIN — Re-Bridge 代表</div>
@@ -532,7 +548,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <div class="bn"><em>Re</em><svg class="hy" width="15" height="13" viewBox="0 0 15 13" aria-hidden="true"><line x1="1" y1="11" x2="14" y2="2" stroke="#1c84cf" stroke-width="2.4" stroke-linecap="round"/></svg>Bridge</div>
+        <div class="bn"><svg class="fmark" width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="15" fill="#16242e"/><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 63 L40 63 L57 45 L83 45" stroke="#eef5fb" stroke-width="6"/><path d="M17 53 L40 53 L57 35 L83 35" stroke="#eef5fb" stroke-width="6"/><path d="M17 63 L40 63 L57 45 L83 45" stroke="#54a8e2" stroke-width="3.8"/><path d="M17 53 L40 53 L57 35 L83 35" stroke="#54a8e2" stroke-width="3.8"/></g></svg><em>Re</em><svg class="hy" width="15" height="13" viewBox="0 0 15 13" aria-hidden="true"><line x1="1" y1="11" x2="14" y2="2" stroke="#1c84cf" stroke-width="2.4" stroke-linecap="round"/></svg>Bridge</div>
         <p>同じ会社を、別の見方で価値に変える。赤字・債務超過・後継者不在でも、残された価値から再生の出口を引く、無料・承継再生型M&A。運営：タムジ株式会社（TAmJ.Corp）。</p>
       </div>
       <div class="foot-links">
