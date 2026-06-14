@@ -198,7 +198,9 @@ async function threadPost(req,env){
 async function adminLogin(req,env){
   let b; try{ b=await req.json(); }catch{ return json({error:"invalid_json"},400,req); }
   if(!env.ADMIN_PASSWORD||!env.SESSION_SECRET) return json({error:"not_configured"},500,req);
-  if(!eqStr(b.password,env.ADMIN_PASSWORD)) return json({error:"unauthorized"},401,req);
+  const okUser = !env.ADMIN_USER || eqStr(b.user, env.ADMIN_USER);
+  const okPw   = eqStr(b.password, env.ADMIN_PASSWORD);
+  if(!okUser||!okPw) return json({error:"unauthorized"},401,req);
   const s=await makeSession(env);
   return new Response(JSON.stringify({ok:true}),{status:200,headers:{
     "Content-Type":"application/json",
@@ -303,6 +305,7 @@ const ADMIN_HTML = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><
     <div class="center">
       <h1 style="margin-bottom:18px">管理ログイン</h1>
       <form id="loginForm">
+        <input id="uid" type="text" placeholder="ID" autocomplete="username" style="margin-bottom:10px" />
         <input id="pw" type="password" placeholder="パスワード" autocomplete="current-password" autofocus />
         <div class="err" id="loginErr"></div>
         <button class="btn" style="width:100%;margin-top:6px">ログイン</button>
@@ -342,7 +345,7 @@ function fmt(iso){try{return new Date(iso).toLocaleString("ja-JP",{month:"2-digi
 async function me(){var r=await fetch("/admin/api/me");return (await r.json()).auth;}
 function show(v){el("login").style.display=v==="login"?"block":"none";el("app").style.display=v==="app"?"block":"none";el("logout").style.display=v==="app"?"inline-flex":"none";}
 async function boot(){ if(await me()){show("app");loadList();} else show("login"); }
-el("loginForm").onsubmit=async function(e){e.preventDefault();el("loginErr").textContent="";var r=await fetch("/admin/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({password:el("pw").value})});if(r.ok){show("app");loadList();}else{el("loginErr").textContent="パスワードが違います。";}};
+el("loginForm").onsubmit=async function(e){e.preventDefault();el("loginErr").textContent="";var r=await fetch("/admin/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({user:el("uid").value,password:el("pw").value})});if(r.ok){show("app");loadList();}else{el("loginErr").textContent="IDまたはパスワードが違います。";}};
 el("logout").onclick=async function(){await fetch("/admin/logout",{method:"POST"});location.reload();};
 async function loadList(){var r=await fetch("/admin/api/list");if(r.status===401){show("login");return;}var j=await r.json();var t=el("list");t.innerHTML="";(j.items||[]).forEach(function(a){var tr=document.createElement("tr");tr.innerHTML="<td>"+fmt(a.created_at)+"</td><td>"+esc(a.company)+"</td><td>"+esc(a.region||"-")+"</td><td>"+esc(a.debt||"-")+"</td><td><span class='badge'>"+esc(a.status)+"</span></td>";tr.onclick=function(){openItem(a.id);};t.appendChild(tr);});if(!(j.items||[]).length)t.innerHTML="<tr><td colspan='5' class='muted'>まだ申込みはありません。</td></tr>";}
 function rowHtml(k,v){return "<div class='row'><span class='k'>"+k+"</span><span class='v'>"+v+"</span></div>";}
