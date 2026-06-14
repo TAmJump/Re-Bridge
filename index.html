@@ -14,26 +14,27 @@
 <meta name="twitter:title" content="Re-Bridge ｜ 無料・承継再生型M&A" />
 <meta name="twitter:description" content="“売れない”を、“売れる形”に変える。引受診断は無料、申込みは約5分。" />
 <meta name="twitter:image" content="https://rebridge.tamjump.com/assets/og.jpg" />
-<meta name="theme-color" content="#f6f2ea" />
+<meta name="theme-color" content="#ffffff" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400&family=Inter:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --paper:#f6f2ea;
-    --paper-2:#efe8da;
-    --paper-3:#e8e0d0;
-    --ink:#1a1613;
-    --ink-2:#2a2520;
-    --ink-soft:#574e45;
-    --ink-faint:#8a8073;
-    --ember:#bf3326;
-    --ember-deep:#8c211a;
-    --ember-glow:#e0573f;
-    --line:rgba(26,22,19,.14);
-    --line-strong:rgba(26,22,19,.28);
-    --line-light:rgba(246,242,234,.16);
+    --paper:#ffffff;
+    --paper-2:#f3f8fc;
+    --paper-3:#e6f0f8;
+    --ink:#14222e;
+    --ink-2:#26384a;
+    --ink-soft:#516275;
+    --ink-faint:#90a1b2;
+    --ember:#1c84cf;
+    --ember-deep:#10568f;
+    --ember-glow:#5cb3e8;
+    --line:rgba(20,34,46,.12);
+    --line-strong:rgba(20,34,46,.24);
+    --line-light:rgba(255,255,255,.18);
+    --night:#0e1b27;
     --maxw:1180px;
     --serif:"Zen Old Mincho",serif;
     --frau:"Fraunces",serif;
@@ -67,10 +68,10 @@
   /* ---------- nav ---------- */
   header.nav{
     position:fixed;top:0;left:0;right:0;z-index:60;
-    background:rgba(246,242,234,.82);backdrop-filter:saturate(140%) blur(14px);
+    background:rgba(255,255,255,.82);backdrop-filter:saturate(140%) blur(14px);
     border-bottom:1px solid transparent;transition:border-color .4s,background .4s;
   }
-  header.nav.scrolled{border-bottom-color:var(--line);background:rgba(246,242,234,.92)}
+  header.nav.scrolled{border-bottom-color:var(--line);background:rgba(255,255,255,.92)}
   .navwrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between}
   .brand{display:flex;align-items:center;gap:10px;text-decoration:none;letter-spacing:0}
   .brand svg.mark{display:block}
@@ -98,7 +99,7 @@
     transition:background .28s,color .28s,transform .28s,box-shadow .28s;
   }
   .btn-primary{background:var(--ember);color:var(--paper);box-shadow:0 1px 0 var(--ember-deep)}
-  .btn-primary:hover{background:var(--ember-deep);transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(140,33,26,.7)}
+  .btn-primary:hover{background:var(--ember-deep);transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(16,86,143,.5)}
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
   .btn-ghost:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
   .btn .arr{font-family:var(--inter);font-weight:400;transition:transform .28s}
@@ -136,7 +137,7 @@
   .hero-meta .k{font-family:var(--inter);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
   .hero-aside{position:relative;padding-bottom:18px}
   .hero-card{
-    border:1px solid var(--line);background:rgba(255,253,248,.5);padding:26px 26px 24px;
+    border:1px solid var(--line);background:rgba(243,248,252,.6);padding:26px 26px 24px;
     opacity:0;transform:translateY(20px);transition:.9s .6s;
   }
   .hero.in .hero-card{opacity:1;transform:none}
@@ -189,7 +190,7 @@
   .rf-c{padding:17px 24px;font-size:15px;border-bottom:1px solid var(--line);display:flex;align-items:center;min-height:58px}
   .rf-c.a{color:var(--ink-faint);background:var(--paper)}
   .rf-c.a s{text-decoration-color:var(--line-strong);text-decoration-thickness:1px}
-  .rf-c.b{color:var(--ink);background:#fbf8f1;font-weight:500;border-left:1px solid var(--ink);position:relative}
+  .rf-c.b{color:var(--ink);background:#f4fafe;font-weight:500;border-left:1px solid var(--ink);position:relative}
   .rf-c.b::before{content:"→";font-family:var(--inter);color:var(--ember);margin-right:11px;font-weight:500}
   .reframe .rf-c:nth-last-child(-n+2){border-bottom:0}
 
@@ -199,7 +200,7 @@
   .chip:hover{border-color:var(--ember);color:var(--ember)}
   .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:50px}
   .card{background:var(--paper);padding:32px 34px;transition:background .3s}
-  .card:hover{background:#fbf8f1}
+  .card:hover{background:#f4fafe}
   .card .ci{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:18px}
   .card h3{font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.02em}
   .card .ck{font-family:var(--frau);font-size:13px;color:var(--ember);font-weight:500}
@@ -218,10 +219,10 @@
   .pivot .qen{font-family:var(--frau);font-style:italic;font-size:17px;color:var(--ink-faint);margin-top:26px;letter-spacing:.02em}
 
   /* ---------- NIGHT section (founder) ---------- */
-  .night{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .night{background:var(--night);color:var(--paper);position:relative;overflow:hidden}
   .night::after{
     content:"";position:absolute;left:0;right:0;bottom:0;height:46%;
-    background:radial-gradient(120% 100% at 78% 120%,rgba(191,51,38,.5),rgba(191,51,38,.08) 45%,transparent 70%);
+    background:radial-gradient(120% 100% at 78% 120%,rgba(28,132,207,.5),rgba(28,132,207,.12) 45%,transparent 70%);
     pointer-events:none;
   }
   .night .wrap{position:relative;z-index:2}
@@ -236,11 +237,11 @@
   .fg-left .sign{margin-top:34px;border-top:1px solid var(--line-light);padding-top:22px}
   .fg-left .sign .nm{font-family:var(--frau);font-size:19px;letter-spacing:.02em}
   .fg-left .sign .ro{font-family:var(--inter);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-top:5px}
-  .fg-right p{color:rgba(246,242,234,.78);font-size:16px;line-height:2.05;margin-bottom:22px}
+  .fg-right p{color:rgba(255,255,255,.8);font-size:16px;line-height:2.05;margin-bottom:22px}
   .fg-right p:last-child{margin-bottom:0}
   .fg-right p strong{color:var(--paper);font-weight:500}
   .fears{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 26px}
-  .fear{font-family:var(--gothic);font-size:12.5px;padding:7px 13px;border:1px solid var(--line-light);color:rgba(246,242,234,.66);letter-spacing:.02em}
+  .fear{font-family:var(--gothic);font-size:12.5px;padding:7px 13px;border:1px solid var(--line-light);color:rgba(255,255,255,.6);letter-spacing:.02em}
   .seen{
     font-family:var(--serif);font-size:21px;line-height:1.8;color:var(--paper);font-weight:600;
     border-left:2px solid var(--ember-glow);padding-left:24px;margin:34px 0 0;
@@ -264,7 +265,7 @@
   .assure h2 em{font-style:normal;color:var(--ember)}
   .assure p{color:var(--ink-soft);font-size:15.5px;line-height:2.05;margin-top:22px}
   .assure p + p{margin-top:16px}
-  .ledger{border:1px solid var(--ink);background:#fbf8f1}
+  .ledger{border:1px solid var(--ink);background:#f4fafe}
   .ledger-row{display:grid;grid-template-columns:1fr 1.25fr}
   .lg-l{padding:30px 30px;border-right:1px solid var(--line-strong)}
   .lg-l.top{border-bottom:1px solid var(--line-strong)}
@@ -303,16 +304,16 @@
     padding:13px 14px;transition:border-color .2s,box-shadow .2s;
   }
   textarea{resize:vertical;min-height:96px;line-height:1.7}
-  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ember);box-shadow:0 0 0 3px rgba(191,51,38,.12)}
-  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23574e45' stroke-width='1.4' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ember);box-shadow:0 0 0 3px rgba(28,132,207,.14)}
+  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23516275' stroke-width='1.4' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
   .fhint{font-size:12px;color:var(--ink-faint);margin-top:7px;line-height:1.6}
   .consent{display:flex;gap:11px;align-items:flex-start;margin:6px 0 24px;font-size:13px;color:var(--ink-soft);line-height:1.7}
   .consent input{width:17px;height:17px;flex:0 0 auto;margin-top:2px;accent-color:var(--ember)}
   form.rb .btn-primary{width:100%;justify-content:center;font-size:16px;padding:18px}
   .formfoot{font-size:12px;color:var(--ink-faint);margin-top:16px;text-align:center;line-height:1.7}
   .formmsg{display:none;font-size:14px;line-height:1.7;padding:14px 16px;border-radius:2px;margin-bottom:20px}
-  .formmsg.ok{display:block;background:rgba(191,51,38,.06);border:1px solid var(--ember);color:var(--ember-deep)}
-  .formmsg.err{display:block;background:#fbeceb;border:1px solid var(--ember);color:var(--ember-deep)}
+  .formmsg.ok{display:block;background:rgba(28,132,207,.08);border:1px solid var(--ember);color:var(--ember-deep)}
+  .formmsg.err{display:block;background:#eaf4fb;border:1px solid var(--ember);color:var(--ember-deep)}
 
   /* ---------- footer ---------- */
   footer{background:var(--ink);color:var(--paper);padding:74px 0 38px}
@@ -320,10 +321,10 @@
   .foot-brand .bn{font-family:var(--inter);font-size:23px;font-weight:700;letter-spacing:-.005em;display:inline-flex;align-items:center;color:var(--paper)}
   .foot-brand .bn em{font-style:normal;color:var(--ember-glow)}
   .foot-brand .bn .hy{margin:0 2px}
-  .foot-brand p{color:rgba(246,242,234,.6);font-size:14px;line-height:1.9;margin-top:16px;max-width:30em}
+  .foot-brand p{color:rgba(255,255,255,.6);font-size:14px;line-height:1.9;margin-top:16px;max-width:30em}
   .foot-links{display:flex;gap:64px;flex-wrap:wrap}
   .foot-col h4{font-family:var(--inter);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 16px;font-weight:600}
-  .foot-col a{display:block;color:rgba(246,242,234,.78);text-decoration:none;font-size:14px;margin-bottom:11px;transition:color .2s}
+  .foot-col a{display:block;color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;margin-bottom:11px;transition:color .2s}
   .foot-col a:hover{color:var(--ember-glow)}
   .foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:30px;font-size:12px;color:var(--ink-faint);font-family:var(--inter);letter-spacing:.04em}
 
@@ -331,7 +332,7 @@
   .photoband{position:relative;height:clamp(300px,50vh,540px);overflow:hidden}
   .photoband img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);transform:scale(1.06);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
   .photoband.in img{transform:scale(1)}
-  .photoband::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,17,14,.66),rgba(20,17,14,.2) 52%,transparent 78%)}
+  .photoband::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,27,39,.66),rgba(14,27,39,.2) 52%,transparent 78%)}
   .pb-cap{position:absolute;left:50%;transform:translateX(-50%);bottom:0;z-index:2;width:100%;max-width:var(--maxw);padding:0 28px 44px}
   .pb-cap .eyebrow{color:var(--ember-glow)}
   .pb-cap .eyebrow::before{background:var(--ember-glow)}
@@ -340,13 +341,13 @@
 
   .night-hero{position:relative;height:clamp(260px,42vh,460px);overflow:hidden}
   .night-hero img{width:100%;height:100%;object-fit:cover;display:block}
-  .night-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,22,19,.15),rgba(26,22,19,.5) 64%,#1a1613 99%)}
+  .night-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,27,39,.15),rgba(14,27,39,.5) 64%,#0e1b27 99%)}
 
   .ind-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:42px 0 0}
   .ind-photos figure{position:relative;margin:0;aspect-ratio:5/4;overflow:hidden;background:var(--ink)}
   .ind-photos img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);transition:transform .7s cubic-bezier(.2,.7,.2,1)}
   .ind-photos figure:hover img{transform:scale(1.05)}
-  .ind-photos figcaption{position:absolute;left:0;bottom:0;width:100%;font-family:var(--inter);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);background:linear-gradient(transparent,rgba(20,17,14,.78));padding:24px 13px 10px}
+  .ind-photos figcaption{position:absolute;left:0;bottom:0;width:100%;font-family:var(--inter);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);background:linear-gradient(transparent,rgba(14,27,39,.78));padding:24px 13px 10px}
 
   /* ---------- responsive ---------- */
   @media(max-width:900px){
@@ -395,11 +396,11 @@
   <div class="navwrap">
     <a class="brand" href="#top" aria-label="Re-Bridge ホーム">
       <svg class="mark" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
-        <rect x="14" y="17" width="72" height="66" rx="4" fill="#1a1613"/>
-        <polyline points="14,62 38,62 58,46 86,46" fill="none" stroke="#f6f2ea" stroke-width="10" stroke-linejoin="round"/>
-        <polyline points="14,62 38,62 58,46 86,46" fill="none" stroke="#bf3326" stroke-width="4.6" stroke-linejoin="round"/>
+        <rect x="14" y="17" width="72" height="66" rx="4" fill="#14222e"/>
+        <polyline points="14,62 38,62 58,46 86,46" fill="none" stroke="#ffffff" stroke-width="10" stroke-linejoin="round"/>
+        <polyline points="14,62 38,62 58,46 86,46" fill="none" stroke="#1c84cf" stroke-width="4.6" stroke-linejoin="round"/>
       </svg>
-      <span class="bn"><em>Re</em><svg class="hy" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true"><line x1="1" y1="9.5" x2="12" y2="1.5" stroke="#bf3326" stroke-width="2.2" stroke-linecap="round"/></svg>Bridge</span>
+      <span class="bn"><em>Re</em><svg class="hy" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true"><line x1="1" y1="9.5" x2="12" y2="1.5" stroke="#1c84cf" stroke-width="2.2" stroke-linecap="round"/></svg>Bridge</span>
     </a>
     <nav class="navlinks" id="navlinks">
       <a href="#value">5分でわかること</a>
@@ -454,7 +455,7 @@
     <div class="bridge-band" aria-hidden="true">
       <svg viewBox="0 0 1180 128" preserveAspectRatio="none">
         <text x="2" y="118" class="bd-label" fill="#8a8073">廃業・債務超過</text>
-        <text x="1178" y="26" text-anchor="end" class="bd-label" fill="#bf3326">事業承継・再生</text>
+        <text x="1178" y="26" text-anchor="end" class="bd-label" fill="#1c84cf">事業承継・再生</text>
         <path class="bd-path" d="M0 96 L440 96 L640 40 L1180 40"/>
         <path class="bd-cable" d="M0 96 L440 96"/>
         <line x1="440" y1="40" x2="440" y2="96" class="bd-cable"/>
@@ -716,7 +717,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <div class="bn"><em>Re</em><svg class="hy" width="15" height="13" viewBox="0 0 15 13" aria-hidden="true"><line x1="1" y1="11" x2="14" y2="2" stroke="#e0573f" stroke-width="2.4" stroke-linecap="round"/></svg>Bridge</div>
+        <div class="bn"><em>Re</em><svg class="hy" width="15" height="13" viewBox="0 0 15 13" aria-hidden="true"><line x1="1" y1="11" x2="14" y2="2" stroke="#5cb3e8" stroke-width="2.4" stroke-linecap="round"/></svg>Bridge</div>
         <p>売れない会社を、売れる形に。赤字・債務超過・後継者不在でも、残された価値から再生の道を架ける、無料・承継再生型M&A。運営：タムジ株式会社（TAmJ.Corp）。</p>
       </div>
       <div class="foot-links">
