@@ -61,7 +61,7 @@ export default {
             from: env.FROM_EMAIL || "Re-Bridge <noreply@tamjump.com>",
             to: env.NOTIFY_TO,
             reply_to: email,
-            subject:`【Re-Bridge】引受診断 申込み：${company}`,
+            subject:`[ReBridge／M&A] 引受診断 申込み：${company}`,
             text:
 `会社名: ${company}
 お名前: ${name}
