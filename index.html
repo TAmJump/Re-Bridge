@@ -8,6 +8,12 @@
 <meta property="og:title" content="Re-Bridge ｜ 無料・承継再生型M&A" />
 <meta property="og:description" content="“売れない”を、“売れる形”に変える。引受診断は無料、申込みは約5分。" />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://rebridge.tamjump.com/" />
+<meta property="og:image" content="https://rebridge.tamjump.com/assets/og.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Re-Bridge ｜ 無料・承継再生型M&A" />
+<meta name="twitter:description" content="“売れない”を、“売れる形”に変える。引受診断は無料、申込みは約5分。" />
+<meta name="twitter:image" content="https://rebridge.tamjump.com/assets/og.jpg" />
 <meta name="theme-color" content="#f6f2ea" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,10 +72,11 @@
   }
   header.nav.scrolled{border-bottom-color:var(--line);background:rgba(246,242,234,.92)}
   .navwrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between}
-  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;letter-spacing:0}
-  .brand svg{display:block}
-  .brand .bn{font-family:var(--frau);font-weight:500;font-size:21px;letter-spacing:.005em}
-  .brand .bn b{color:var(--ember);font-weight:600}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;letter-spacing:0}
+  .brand svg.mark{display:block}
+  .brand .bn{font-family:var(--inter);font-weight:700;font-size:19px;letter-spacing:-.005em;display:inline-flex;align-items:center;color:var(--ink)}
+  .brand .bn em{font-style:normal;color:var(--ember)}
+  .brand .bn .hy{margin:0 1px}
   .navlinks{display:flex;align-items:center;gap:30px}
   .navlinks a{font-size:13px;text-decoration:none;color:var(--ink-soft);transition:color .25s;letter-spacing:.04em}
   .navlinks a:hover{color:var(--ink)}
@@ -310,14 +317,36 @@
   /* ---------- footer ---------- */
   footer{background:var(--ink);color:var(--paper);padding:74px 0 38px}
   .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;border-bottom:1px solid var(--line-light);padding-bottom:40px}
-  .foot-brand .bn{font-family:var(--frau);font-size:24px;font-weight:500}
-  .foot-brand .bn b{color:var(--ember-glow);font-weight:600}
+  .foot-brand .bn{font-family:var(--inter);font-size:23px;font-weight:700;letter-spacing:-.005em;display:inline-flex;align-items:center;color:var(--paper)}
+  .foot-brand .bn em{font-style:normal;color:var(--ember-glow)}
+  .foot-brand .bn .hy{margin:0 2px}
   .foot-brand p{color:rgba(246,242,234,.6);font-size:14px;line-height:1.9;margin-top:16px;max-width:30em}
   .foot-links{display:flex;gap:64px;flex-wrap:wrap}
   .foot-col h4{font-family:var(--inter);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 16px;font-weight:600}
   .foot-col a{display:block;color:rgba(246,242,234,.78);text-decoration:none;font-size:14px;margin-bottom:11px;transition:color .2s}
   .foot-col a:hover{color:var(--ember-glow)}
   .foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:30px;font-size:12px;color:var(--ink-faint);font-family:var(--inter);letter-spacing:.04em}
+
+  /* ---------- photography ---------- */
+  .photoband{position:relative;height:clamp(300px,50vh,540px);overflow:hidden}
+  .photoband img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);transform:scale(1.06);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+  .photoband.in img{transform:scale(1)}
+  .photoband::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,17,14,.66),rgba(20,17,14,.2) 52%,transparent 78%)}
+  .pb-cap{position:absolute;left:50%;transform:translateX(-50%);bottom:0;z-index:2;width:100%;max-width:var(--maxw);padding:0 28px 44px}
+  .pb-cap .eyebrow{color:var(--ember-glow)}
+  .pb-cap .eyebrow::before{background:var(--ember-glow)}
+  .pb-cap p{font-family:var(--serif);color:var(--paper);font-weight:600;font-size:clamp(22px,3.3vw,40px);line-height:1.4;max-width:15em;margin:14px 0 0;opacity:0;transform:translateY(16px);transition:.9s .3s}
+  .photoband.in .pb-cap p{opacity:1;transform:none}
+
+  .night-hero{position:relative;height:clamp(260px,42vh,460px);overflow:hidden}
+  .night-hero img{width:100%;height:100%;object-fit:cover;display:block}
+  .night-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,22,19,.15),rgba(26,22,19,.5) 64%,#1a1613 99%)}
+
+  .ind-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:42px 0 0}
+  .ind-photos figure{position:relative;margin:0;aspect-ratio:5/4;overflow:hidden;background:var(--ink)}
+  .ind-photos img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+  .ind-photos figure:hover img{transform:scale(1.05)}
+  .ind-photos figcaption{position:absolute;left:0;bottom:0;width:100%;font-family:var(--inter);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);background:linear-gradient(transparent,rgba(20,17,14,.78));padding:24px 13px 10px}
 
   /* ---------- responsive ---------- */
   @media(max-width:900px){
@@ -340,6 +369,7 @@
     .sec{padding:74px 0}
     .pivot{padding:84px 0}
     .check-grid,.reframe,.cards{grid-template-columns:1fr}
+    .ind-photos{grid-template-columns:repeat(2,1fr)}
     .reframe{border:1px solid var(--ink)}
     .rf-c.b{border-left:0;border-top:1px solid var(--line-strong)}
     .rf-c.b::before{content:"Re-Bridge ／ "}
@@ -364,14 +394,12 @@
 <header class="nav" id="nav">
   <div class="navwrap">
     <a class="brand" href="#top" aria-label="Re-Bridge ホーム">
-      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-        <path d="M2 21 C8 21 9 11 15 11 C21 11 22 21 28 21" stroke="#1a1613" stroke-width="1.6" fill="none"/>
-        <line x1="2" y1="21" x2="28" y2="21" stroke="#1a1613" stroke-width="1.6"/>
-        <circle cx="15" cy="11" r="2.4" fill="#bf3326"/>
-        <line x1="9.5" y1="13.4" x2="9.5" y2="21" stroke="#1a1613" stroke-width="1"/>
-        <line x1="20.5" y1="13.4" x2="20.5" y2="21" stroke="#1a1613" stroke-width="1"/>
+      <svg class="mark" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="14" y="17" width="72" height="66" rx="4" fill="#1a1613"/>
+        <polyline points="14,62 38,62 58,46 86,46" fill="none" stroke="#f6f2ea" stroke-width="10" stroke-linejoin="round"/>
+        <polyline points="14,62 38,62 58,46 86,46" fill="none" stroke="#bf3326" stroke-width="4.6" stroke-linejoin="round"/>
       </svg>
-      <span class="bn">Re<b>-</b>Bridge</span>
+      <span class="bn"><em>Re</em><svg class="hy" width="13" height="11" viewBox="0 0 13 11" aria-hidden="true"><line x1="1" y1="9.5" x2="12" y2="1.5" stroke="#bf3326" stroke-width="2.2" stroke-linecap="round"/></svg>Bridge</span>
     </a>
     <nav class="navlinks" id="navlinks">
       <a href="#value">5分でわかること</a>
@@ -426,17 +454,23 @@
     <div class="bridge-band" aria-hidden="true">
       <svg viewBox="0 0 1180 128" preserveAspectRatio="none">
         <text x="2" y="118" class="bd-label" fill="#8a8073">廃業・債務超過</text>
-        <text x="1178" y="118" text-anchor="end" class="bd-label" fill="#bf3326">事業承継・再生</text>
-        <line x1="0" y1="64" x2="1180" y2="64" class="bd-path"/>
-        <path class="bd-cable" d="M120 64 L300 22 L480 64"/>
-        <path class="bd-cable" d="M700 64 L880 22 L1060 64"/>
-        <line x1="300" y1="22" x2="300" y2="64" class="bd-cable"/>
-        <line x1="880" y1="22" x2="880" y2="64" class="bd-cable"/>
-        <path class="bd-ember" d="M0 64 C200 64 240 22 300 22 C360 22 420 64 590 64 C760 64 820 22 880 22 C940 22 980 64 1180 64"/>
-        <circle cx="300" cy="22" r="4" class="bd-node"/>
-        <circle cx="880" cy="22" r="4" class="bd-node"/>
+        <text x="1178" y="26" text-anchor="end" class="bd-label" fill="#bf3326">事業承継・再生</text>
+        <path class="bd-path" d="M0 96 L440 96 L640 40 L1180 40"/>
+        <path class="bd-cable" d="M0 96 L440 96"/>
+        <line x1="440" y1="40" x2="440" y2="96" class="bd-cable"/>
+        <path class="bd-ember" d="M440 96 L640 40 L1180 40"/>
+        <circle cx="440" cy="96" r="5" class="bd-node"/>
       </svg>
     </div>
+  </div>
+</section>
+
+<!-- PHOTOBAND: the before -->
+<section class="photoband reveal" id="band1">
+  <img src="assets/street-dawn.jpg" alt="早朝、シャッターの下りた地方の店先" loading="lazy" />
+  <div class="pb-cap">
+    <span class="eyebrow">廃業の、その前に</span>
+    <p>会社を畳むのは、いつでもできる。</p>
   </div>
 </section>
 
@@ -493,6 +527,12 @@
     <div class="ind-strip reveal" data-d="1">
       <span class="chip">医療・介護・福祉</span><span class="chip">飲食・食品</span><span class="chip">美容・サロン</span><span class="chip">建設・設備</span><span class="chip">運送・物流</span><span class="chip">小売・EC</span><span class="chip">製造・町工場</span><span class="chip">教育・スクール</span><span class="chip">農業・一次産業</span><span class="chip">ペット・動物関連</span><span class="chip">宿泊・観光</span><span class="chip">地域サービス</span>
     </div>
+    <div class="ind-photos reveal" data-d="1">
+      <figure><img src="assets/ex-bento.jpg" alt="弁当の厨房で盛り付けをする職人の手" loading="lazy" /><figcaption>飲食・食品</figcaption></figure>
+      <figure><img src="assets/ex-factory.jpg" alt="旋盤を操る町工場の職人" loading="lazy" /><figcaption>製造・町工場</figcaption></figure>
+      <figure><img src="assets/ex-salon.jpg" alt="閉店間際の静かな美容室" loading="lazy" /><figcaption>美容・サロン</figcaption></figure>
+      <figure><img src="assets/ex-ryokan.jpg" alt="朝の光が差す和室" loading="lazy" /><figcaption>宿泊・観光</figcaption></figure>
+    </div>
     <div class="cards">
       <div class="card reveal"><div class="ci"><h3>赤字の弁当屋</h3><span class="ck">Ex.01</span></div>
         <dl><dt>残る価値</dt><dd>厨房・法人配達先・地域顧客・保健所許可</dd>
@@ -540,6 +580,9 @@
 
 <!-- NIGHT / FOUNDER -->
 <section class="night" id="founder">
+  <div class="night-hero">
+    <img src="assets/night-desk.jpg" alt="深夜、デスクランプの下に積まれた請求書と通帳、疲れた手" loading="lazy" />
+  </div>
   <div class="wrap sec">
     <div class="sec-head reveal" style="margin-bottom:0">
       <span class="eyebrow">代表メッセージ</span>
@@ -673,7 +716,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <div class="bn">Re<b>-</b>Bridge</div>
+        <div class="bn"><em>Re</em><svg class="hy" width="15" height="13" viewBox="0 0 15 13" aria-hidden="true"><line x1="1" y1="11" x2="14" y2="2" stroke="#e0573f" stroke-width="2.4" stroke-linecap="round"/></svg>Bridge</div>
         <p>売れない会社を、売れる形に。赤字・債務超過・後継者不在でも、残された価値から再生の道を架ける、無料・承継再生型M&A。運営：タムジ株式会社（TAmJ.Corp）。</p>
       </div>
       <div class="foot-links">
