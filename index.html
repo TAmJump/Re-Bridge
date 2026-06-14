@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Re-Bridge ｜ 無料・承継再生型M&A｜タムジ株式会社</title>
+<meta name="description" content="売れない会社は、価値がない会社ではありません。価値の出し方を間違えている会社です。赤字・債務超過・税金滞納・後継者不在でも、まだ残る資産・顧客・許認可・人材から再生の道を探す、承継再生型M&A。引受診断は無料、申込みは約5分。" />
+<meta property="og:title" content="Re-Bridge ｜ 無料・承継再生型M&A" />
+<meta property="og:description" content="“売れない”を、“売れる形”に変える。引受診断は無料、申込みは約5分。" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#f6f2ea" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400&family=Inter:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f6f2ea;
+    --paper-2:#efe8da;
+    --paper-3:#e8e0d0;
+    --ink:#1a1613;
+    --ink-2:#2a2520;
+    --ink-soft:#574e45;
+    --ink-faint:#8a8073;
+    --ember:#bf3326;
+    --ember-deep:#8c211a;
+    --ember-glow:#e0573f;
+    --line:rgba(26,22,19,.14);
+    --line-strong:rgba(26,22,19,.28);
+    --line-light:rgba(246,242,234,.16);
+    --maxw:1180px;
+    --serif:"Zen Old Mincho",serif;
+    --frau:"Fraunces",serif;
+    --gothic:"Zen Kaku Gothic New",sans-serif;
+    --inter:"Inter",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--gothic);font-weight:400;line-height:1.85;
+    font-feature-settings:"palt" 1;letter-spacing:.01em;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--ember);color:var(--paper)}
+  a{color:inherit}
+  h1,h2,h3{font-weight:500;line-height:1.32;letter-spacing:.01em;margin:0}
+  p{margin:0}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-family:var(--inter);font-size:11px;font-weight:600;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--ember);
+    display:inline-flex;align-items:center;gap:.7em;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--ember)}
+  .eyebrow.center{justify-content:center}
+  .eyebrow.center::before{width:20px}
+  .eyebrow.center::after{content:"";width:20px;height:1px;background:var(--ember)}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    background:rgba(246,242,234,.82);backdrop-filter:saturate(140%) blur(14px);
+    border-bottom:1px solid transparent;transition:border-color .4s,background .4s;
+  }
+  header.nav.scrolled{border-bottom-color:var(--line);background:rgba(246,242,234,.92)}
+  .navwrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;letter-spacing:0}
+  .brand svg{display:block}
+  .brand .bn{font-family:var(--frau);font-weight:500;font-size:21px;letter-spacing:.005em}
+  .brand .bn b{color:var(--ember);font-weight:600}
+  .navlinks{display:flex;align-items:center;gap:30px}
+  .navlinks a{font-size:13px;text-decoration:none;color:var(--ink-soft);transition:color .25s;letter-spacing:.04em}
+  .navlinks a:hover{color:var(--ink)}
+  .nav-cta{
+    font-family:var(--gothic);font-size:13px;font-weight:500;
+    background:var(--ink);color:var(--paper);text-decoration:none;
+    padding:11px 20px;border-radius:2px;transition:background .25s,transform .25s;
+    letter-spacing:.04em;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--ember);transform:translateY(-1px)}
+  .burger{display:none;background:none;border:0;cursor:pointer;padding:6px;width:38px;height:38px}
+  .burger span{display:block;width:22px;height:1.5px;background:var(--ink);margin:5px auto;transition:.3s}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.7em;cursor:pointer;
+    font-family:var(--gothic);font-weight:500;font-size:15px;letter-spacing:.04em;
+    padding:17px 32px;border-radius:2px;text-decoration:none;border:1px solid transparent;
+    transition:background .28s,color .28s,transform .28s,box-shadow .28s;
+  }
+  .btn-primary{background:var(--ember);color:var(--paper);box-shadow:0 1px 0 var(--ember-deep)}
+  .btn-primary:hover{background:var(--ember-deep);transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(140,33,26,.7)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+  .btn .arr{font-family:var(--inter);font-weight:400;transition:transform .28s}
+  .btn:hover .arr{transform:translateX(4px)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:148px 0 0;overflow:hidden}
+  .hero .wrap{position:relative;z-index:2}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
+  .hero h1{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(34px,5.6vw,68px);line-height:1.22;letter-spacing:.005em;
+    margin:26px 0 0;
+  }
+  .hero h1 .l{display:block;overflow:hidden}
+  .hero h1 .l > span{display:block;transform:translateY(102%);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+  .hero.in h1 .l > span{transform:translateY(0)}
+  .hero h1 .l:nth-child(2) > span{transition-delay:.09s}
+  .hero h1 .l:nth-child(3) > span{transition-delay:.18s}
+  .hero h1 em{font-style:normal;color:var(--ember);font-weight:700}
+  .hero-lead{
+    font-size:16px;color:var(--ink-soft);line-height:2;max-width:30em;
+    margin:28px 0 0;opacity:0;transform:translateY(14px);transition:.9s .5s;
+  }
+  .hero.in .hero-lead{opacity:1;transform:none}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:38px 0 0;opacity:0;transform:translateY(14px);transition:.9s .66s}
+  .hero.in .hero-cta{opacity:1;transform:none}
+  .hero-meta{
+    display:flex;gap:26px;margin:30px 0 0;flex-wrap:wrap;
+    opacity:0;transform:translateY(14px);transition:.9s .8s;
+  }
+  .hero.in .hero-meta{opacity:1;transform:none}
+  .hero-meta div{display:flex;flex-direction:column;gap:2px}
+  .hero-meta .n{font-family:var(--frau);font-size:27px;font-weight:500;line-height:1;color:var(--ink)}
+  .hero-meta .k{font-family:var(--inter);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+  .hero-aside{position:relative;padding-bottom:18px}
+  .hero-card{
+    border:1px solid var(--line);background:rgba(255,253,248,.5);padding:26px 26px 24px;
+    opacity:0;transform:translateY(20px);transition:.9s .6s;
+  }
+  .hero.in .hero-card{opacity:1;transform:none}
+  .hero-card .ttl{font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:.02em}
+  .hero-card .sub{font-family:var(--inter);font-size:11px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:3px}
+  .hero-card ul{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:11px}
+  .hero-card li{display:flex;gap:11px;font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+  .hero-card li .bx{flex:0 0 auto;width:16px;height:16px;border:1.5px solid var(--ember);margin-top:3px;position:relative}
+  .hero-card li .bx::after{content:"";position:absolute;left:3px;top:0px;width:5px;height:9px;border:solid var(--ember);border-width:0 1.5px 1.5px 0;transform:rotate(43deg)}
+
+  /* bridge svg under hero */
+  .bridge-band{position:relative;margin-top:54px;height:128px}
+  .bridge-band svg{position:absolute;inset:0;width:100%;height:100%}
+  .bd-path{stroke:var(--line-strong);stroke-width:1.4;fill:none}
+  .bd-cable{stroke:var(--line);stroke-width:1;fill:none}
+  .bd-ember{stroke:var(--ember);stroke-width:1.6;fill:none;stroke-dasharray:1600;stroke-dashoffset:1600;transition:stroke-dashoffset 2.2s cubic-bezier(.4,0,.1,1)}
+  .hero.in .bd-ember{stroke-dashoffset:0}
+  .bd-node{fill:var(--ember)}
+  .bd-label{font-family:var(--inter);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+
+  /* ---------- generic section ---------- */
+  section{position:relative}
+  .sec{padding:104px 0}
+  .sec-head{max-width:760px;margin:0 0 52px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.5vw,42px);line-height:1.34;margin:18px 0 0}
+  .sec-head h2 em{font-style:normal;color:var(--ember)}
+  .sec-head p{margin:18px 0 0;color:var(--ink-soft);font-size:15.5px;line-height:2}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}
+  .reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}
+
+  /* checklist 5min */
+  .check{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+  .check-item{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 30px;display:flex;gap:18px;align-items:flex-start;background:var(--paper)}
+  .check-item .num{font-family:var(--frau);font-size:13px;color:var(--ember-deep);font-weight:500;letter-spacing:.05em;margin-top:2px;min-width:24px}
+  .check-item p{font-size:16px;line-height:1.7;color:var(--ink-2);font-weight:500}
+  .check-item p b{color:var(--ink);font-weight:700}
+
+  /* reframe table */
+  .reframe{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ink);overflow:hidden}
+  .rf-h{padding:18px 24px;font-family:var(--inter);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+  .rf-h.a{background:var(--paper-3);color:var(--ink-faint);border-bottom:1px solid var(--line-strong)}
+  .rf-h.b{background:var(--ink);color:var(--paper);border-bottom:1px solid var(--ink)}
+  .rf-row{display:contents}
+  .rf-c{padding:17px 24px;font-size:15px;border-bottom:1px solid var(--line);display:flex;align-items:center;min-height:58px}
+  .rf-c.a{color:var(--ink-faint);background:var(--paper)}
+  .rf-c.a s{text-decoration-color:var(--line-strong);text-decoration-thickness:1px}
+  .rf-c.b{color:var(--ink);background:#fbf8f1;font-weight:500;border-left:1px solid var(--ink);position:relative}
+  .rf-c.b::before{content:"→";font-family:var(--inter);color:var(--ember);margin-right:11px;font-weight:500}
+  .reframe .rf-c:nth-last-child(-n+2){border-bottom:0}
+
+  /* industry */
+  .ind-strip{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 8px}
+  .chip{font-family:var(--gothic);font-size:13px;padding:8px 15px;border:1px solid var(--line-strong);border-radius:100px;color:var(--ink-soft);letter-spacing:.03em;transition:.25s}
+  .chip:hover{border-color:var(--ember);color:var(--ember)}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:50px}
+  .card{background:var(--paper);padding:32px 34px;transition:background .3s}
+  .card:hover{background:#fbf8f1}
+  .card .ci{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:18px}
+  .card h3{font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.02em}
+  .card .ck{font-family:var(--frau);font-size:13px;color:var(--ember);font-weight:500}
+  .card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:9px 16px}
+  .card dt{font-family:var(--inter);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);padding-top:5px;white-space:nowrap}
+  .card dd{margin:0;font-size:13.5px;line-height:1.7;color:var(--ink-2)}
+  .card dd.hl{color:var(--ember-deep);font-weight:500}
+
+  /* pivot quote */
+  .pivot{text-align:center;padding:120px 0}
+  .pivot .q{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(26px,4.3vw,52px);line-height:1.5;letter-spacing:.01em;max-width:18em;margin:0 auto;
+  }
+  .pivot .q em{font-style:normal;color:var(--ember);font-weight:700}
+  .pivot .qen{font-family:var(--frau);font-style:italic;font-size:17px;color:var(--ink-faint);margin-top:26px;letter-spacing:.02em}
+
+  /* ---------- NIGHT section (founder) ---------- */
+  .night{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .night::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:46%;
+    background:radial-gradient(120% 100% at 78% 120%,rgba(191,51,38,.5),rgba(191,51,38,.08) 45%,transparent 70%);
+    pointer-events:none;
+  }
+  .night .wrap{position:relative;z-index:2}
+  .night .eyebrow{color:var(--ember-glow)}
+  .night .eyebrow::before{background:var(--ember-glow)}
+  .night h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.7vw,44px);line-height:1.4;color:var(--paper);margin:18px 0 0}
+  .night h2 em{font-style:normal;color:var(--ember-glow)}
+  .founder-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;margin-top:54px;align-items:start}
+  .fg-left{position:sticky;top:96px}
+  .fg-left .lede{font-family:var(--serif);font-size:23px;line-height:1.85;color:var(--paper);font-weight:500}
+  .fg-left .lede em{font-style:normal;color:var(--ember-glow);font-weight:600}
+  .fg-left .sign{margin-top:34px;border-top:1px solid var(--line-light);padding-top:22px}
+  .fg-left .sign .nm{font-family:var(--frau);font-size:19px;letter-spacing:.02em}
+  .fg-left .sign .ro{font-family:var(--inter);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-top:5px}
+  .fg-right p{color:rgba(246,242,234,.78);font-size:16px;line-height:2.05;margin-bottom:22px}
+  .fg-right p:last-child{margin-bottom:0}
+  .fg-right p strong{color:var(--paper);font-weight:500}
+  .fears{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 26px}
+  .fear{font-family:var(--gothic);font-size:12.5px;padding:7px 13px;border:1px solid var(--line-light);color:rgba(246,242,234,.66);letter-spacing:.02em}
+  .seen{
+    font-family:var(--serif);font-size:21px;line-height:1.8;color:var(--paper);font-weight:600;
+    border-left:2px solid var(--ember-glow);padding-left:24px;margin:34px 0 0;
+  }
+  .seen em{font-style:normal;color:var(--ember-glow)}
+
+  /* engagement scope */
+  .scope-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px}
+  .scope-cell{background:var(--paper);padding:34px 36px}
+  .scope-cell h3{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:22px;display:flex;align-items:center;gap:11px}
+  .scope-cell h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--ember)}
+  .scope-cell.out h3 .dot{background:var(--ink-faint)}
+  .scope-list{display:flex;flex-wrap:wrap;gap:9px}
+  .scope-list span{font-size:14px;padding:8px 15px;background:var(--paper-2);border:1px solid var(--line);letter-spacing:.02em}
+  .scope-cell.out .scope-list span{color:var(--ink-faint)}
+  .scope-cell.out p{font-size:13px;color:var(--ink-faint);margin-top:18px;line-height:1.8}
+
+  /* assurance + asymmetry */
+  .assure-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+  .assure h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.2vw,38px);line-height:1.4}
+  .assure h2 em{font-style:normal;color:var(--ember)}
+  .assure p{color:var(--ink-soft);font-size:15.5px;line-height:2.05;margin-top:22px}
+  .assure p + p{margin-top:16px}
+  .ledger{border:1px solid var(--ink);background:#fbf8f1}
+  .ledger-row{display:grid;grid-template-columns:1fr 1.25fr}
+  .lg-l{padding:30px 30px;border-right:1px solid var(--line-strong)}
+  .lg-l.top{border-bottom:1px solid var(--line-strong)}
+  .lg-l .lab{font-family:var(--inter);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+  .lg-l .big{font-family:var(--serif);font-size:30px;font-weight:700;margin-top:8px;line-height:1.1}
+  .lg-l.lose .big{color:var(--ink-faint)}
+  .lg-l.gain .big{color:var(--ember)}
+  .lg-r{padding:24px 30px;display:flex;flex-direction:column;justify-content:center;gap:7px}
+  .lg-r.top{border-bottom:1px solid var(--line-strong)}
+  .lg-r span{font-size:14px;color:var(--ink-2);display:flex;align-items:center;gap:9px}
+  .lg-r span::before{content:"";width:5px;height:5px;background:var(--ember);border-radius:50%;flex:0 0 auto}
+  .lg-r.lose span{color:var(--ink-faint)}
+  .lg-r.lose span::before{background:var(--ink-faint)}
+
+  /* ---------- form ---------- */
+  .apply{background:var(--paper-2);border-top:1px solid var(--line)}
+  .apply-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
+  .apply-intro{position:sticky;top:96px}
+  .apply-intro h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.6vw,42px);line-height:1.34;margin:18px 0 0}
+  .apply-intro h2 em{font-style:normal;color:var(--ember)}
+  .apply-intro .note{margin-top:24px;color:var(--ink-soft);font-size:15px;line-height:2}
+  .apply-intro .steps{margin-top:30px;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .apply-intro .steps div{padding:15px 0;border-bottom:1px solid var(--line);display:flex;gap:15px;align-items:baseline}
+  .apply-intro .steps .s{font-family:var(--frau);color:var(--ember);font-size:13px;font-weight:500}
+  .apply-intro .steps p{font-size:14px;color:var(--ink-2)}
+
+  form.rb{background:var(--paper);border:1px solid var(--line);padding:38px 40px}
+  .frow{margin-bottom:22px}
+  .frow.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  label{display:block;font-size:13px;font-weight:500;color:var(--ink-2);margin-bottom:8px;letter-spacing:.03em}
+  label .req{color:var(--ember);font-size:11px;margin-left:5px;font-family:var(--inter);letter-spacing:.05em}
+  label .opt{color:var(--ink-faint);font-size:11px;margin-left:5px}
+  input,select,textarea{
+    width:100%;font-family:var(--gothic);font-size:15px;color:var(--ink);
+    background:var(--paper);border:1px solid var(--line-strong);border-radius:2px;
+    padding:13px 14px;transition:border-color .2s,box-shadow .2s;
+  }
+  textarea{resize:vertical;min-height:96px;line-height:1.7}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ember);box-shadow:0 0 0 3px rgba(191,51,38,.12)}
+  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23574e45' stroke-width='1.4' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
+  .fhint{font-size:12px;color:var(--ink-faint);margin-top:7px;line-height:1.6}
+  .consent{display:flex;gap:11px;align-items:flex-start;margin:6px 0 24px;font-size:13px;color:var(--ink-soft);line-height:1.7}
+  .consent input{width:17px;height:17px;flex:0 0 auto;margin-top:2px;accent-color:var(--ember)}
+  form.rb .btn-primary{width:100%;justify-content:center;font-size:16px;padding:18px}
+  .formfoot{font-size:12px;color:var(--ink-faint);margin-top:16px;text-align:center;line-height:1.7}
+  .formmsg{display:none;font-size:14px;line-height:1.7;padding:14px 16px;border-radius:2px;margin-bottom:20px}
+  .formmsg.ok{display:block;background:rgba(191,51,38,.06);border:1px solid var(--ember);color:var(--ember-deep)}
+  .formmsg.err{display:block;background:#fbeceb;border:1px solid var(--ember);color:var(--ember-deep)}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink);color:var(--paper);padding:74px 0 38px}
+  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;border-bottom:1px solid var(--line-light);padding-bottom:40px}
+  .foot-brand .bn{font-family:var(--frau);font-size:24px;font-weight:500}
+  .foot-brand .bn b{color:var(--ember-glow);font-weight:600}
+  .foot-brand p{color:rgba(246,242,234,.6);font-size:14px;line-height:1.9;margin-top:16px;max-width:30em}
+  .foot-links{display:flex;gap:64px;flex-wrap:wrap}
+  .foot-col h4{font-family:var(--inter);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 16px;font-weight:600}
+  .foot-col a{display:block;color:rgba(246,242,234,.78);text-decoration:none;font-size:14px;margin-bottom:11px;transition:color .2s}
+  .foot-col a:hover{color:var(--ember-glow)}
+  .foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:30px;font-size:12px;color:var(--ink-faint);font-family:var(--inter);letter-spacing:.04em}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:900px){
+    .navlinks{display:none}
+    .burger{display:block}
+    .navlinks.open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:1px solid var(--line);padding:20px 28px;gap:18px;align-items:flex-start}
+    .navlinks.open .nav-cta{align-self:stretch;text-align:center}
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .hero-aside{order:2}
+    .founder-grid{grid-template-columns:1fr;gap:36px}
+    .fg-left,.apply-intro{position:static}
+    .assure-grid{grid-template-columns:1fr;gap:34px}
+    .apply-grid{grid-template-columns:1fr;gap:40px}
+    .scope-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:680px){
+    .wrap{padding:0 20px}
+    .navwrap{padding:0 20px}
+    .hero{padding:120px 0 0}
+    .sec{padding:74px 0}
+    .pivot{padding:84px 0}
+    .check-grid,.reframe,.cards{grid-template-columns:1fr}
+    .reframe{border:1px solid var(--ink)}
+    .rf-c.b{border-left:0;border-top:1px solid var(--line-strong)}
+    .rf-c.b::before{content:"Re-Bridge ／ "}
+    .rf-h.a,.rf-h.b{display:none}
+    .frow.two{grid-template-columns:1fr}
+    .ledger-row{grid-template-columns:1fr}
+    .lg-l{border-right:0;border-bottom:1px solid var(--line-strong)}
+    form.rb{padding:28px 22px}
+    .hero-meta{gap:20px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important}
+    .reveal{opacity:1;transform:none}
+    .hero h1 .l > span{transform:none}
+    .bd-ember{stroke-dashoffset:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="navwrap">
+    <a class="brand" href="#top" aria-label="Re-Bridge ホーム">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <path d="M2 21 C8 21 9 11 15 11 C21 11 22 21 28 21" stroke="#1a1613" stroke-width="1.6" fill="none"/>
+        <line x1="2" y1="21" x2="28" y2="21" stroke="#1a1613" stroke-width="1.6"/>
+        <circle cx="15" cy="11" r="2.4" fill="#bf3326"/>
+        <line x1="9.5" y1="13.4" x2="9.5" y2="21" stroke="#1a1613" stroke-width="1"/>
+        <line x1="20.5" y1="13.4" x2="20.5" y2="21" stroke="#1a1613" stroke-width="1"/>
+      </svg>
+      <span class="bn">Re<b>-</b>Bridge</span>
+    </a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#value">5分でわかること</a>
+      <a href="#scope">業種・引受対象</a>
+      <a href="#founder">代表より</a>
+      <a href="#apply" class="nav-cta">無料で引受診断</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-main">
+        <span class="eyebrow">無料・承継再生型 M&A</span>
+        <h1>
+          <span class="l"><span>売れない会社は、</span></span>
+          <span class="l"><span><em>価値がない</em>会社ではない。</span></span>
+          <span class="l"><span>価値の出し方を、間違えている。</span></span>
+        </h1>
+        <p class="hero-lead">赤字でも、債務超過でも、後継者不在でも──まだ使える資産・顧客・許認可・導線が残っていれば、再生できる可能性があります。決算書ではなく、会社の中に残る「まだ価値になるもの」を、私たちは見ます。</p>
+        <div class="hero-cta">
+          <a href="#apply" class="btn btn-primary">無料で引受診断を開始する <span class="arr">→</span></a>
+          <a href="#value" class="btn btn-ghost">5分でわかること</a>
+        </div>
+        <div class="hero-meta">
+          <div><span class="n">約5分</span><span class="k">申込みに必要な時間</span></div>
+          <div><span class="n">¥0</span><span class="k">診断費用</span></div>
+          <div><span class="n">業種不問</span><span class="k">医療から町工場まで</span></div>
+        </div>
+      </div>
+      <aside class="hero-aside">
+        <div class="hero-card">
+          <div class="ttl">たった5分の申込みで、<br>確認できること</div>
+          <div class="sub">5-minute diagnosis</div>
+          <ul>
+            <li><span class="bx"></span>廃業しかないと思っていた会社に、価値が残っているか</li>
+            <li><span class="bx"></span>通常のM&Aで断られた会社でも、再生できる可能性があるか</li>
+            <li><span class="bx"></span>今の借入や支払い遅延を、乗り越える方法があるか</li>
+            <li><span class="bx"></span>後継者不在でも、事業を残せるか</li>
+            <li><span class="bx"></span>自分や家族に、現金を残せる可能性があるか</li>
+            <li><span class="bx"></span>会社を潰さず、従業員や顧客を守れるか</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <div class="bridge-band" aria-hidden="true">
+      <svg viewBox="0 0 1180 128" preserveAspectRatio="none">
+        <text x="2" y="118" class="bd-label" fill="#8a8073">廃業・債務超過</text>
+        <text x="1178" y="118" text-anchor="end" class="bd-label" fill="#bf3326">事業承継・再生</text>
+        <line x1="0" y1="64" x2="1180" y2="64" class="bd-path"/>
+        <path class="bd-cable" d="M120 64 L300 22 L480 64"/>
+        <path class="bd-cable" d="M700 64 L880 22 L1060 64"/>
+        <line x1="300" y1="22" x2="300" y2="64" class="bd-cable"/>
+        <line x1="880" y1="22" x2="880" y2="64" class="bd-cable"/>
+        <path class="bd-ember" d="M0 64 C200 64 240 22 300 22 C360 22 420 64 590 64 C760 64 820 22 880 22 C940 22 980 64 1180 64"/>
+        <circle cx="300" cy="22" r="4" class="bd-node"/>
+        <circle cx="880" cy="22" r="4" class="bd-node"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE / 5min -->
+<section class="check sec" id="value">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">5分の先にあるもの</span>
+      <h2>会社を畳むのは、いつでもできる。<br>価値を確認できるのは、<em>廃業届を出す前だけ</em>。</h2>
+      <p>「無料相談です」で終わらせません。約5分の申込みの先で確認できるのは、あなたの会社が本当に終わりなのか、それとも、まだ手元に残せるものがあるのか──その分かれ目です。</p>
+    </div>
+    <div class="check-grid reveal" data-d="1">
+      <div class="check-item"><span class="num">01</span><p>廃業しかないと思っていた会社に、<b>価値が残っているか</b></p></div>
+      <div class="check-item"><span class="num">02</span><p>通常のM&Aで断られた会社でも、<b>再生できる可能性があるか</b></p></div>
+      <div class="check-item"><span class="num">03</span><p>今の借入や支払い遅延を、<b>乗り越える方法があるか</b></p></div>
+      <div class="check-item"><span class="num">04</span><p>後継者不在でも、<b>事業を残せるか</b></p></div>
+      <div class="check-item"><span class="num">05</span><p>自分や家族に、<b>現金を残せる可能性があるか</b></p></div>
+      <div class="check-item"><span class="num">06</span><p>会社を潰さず、<b>従業員や顧客を守れるか</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REFRAME TABLE -->
+<section class="sec" id="reframe">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">同じ会社を、別の角度から</span>
+      <h2>多くの経営者は、自社の価値に<br>気付かないまま会社を閉じる。</h2>
+      <p>「赤字」「古い店舗」「後継者不在」──通常の見方では弱点に見えるものが、Re-Bridgeの見方では、再生の起点になります。</p>
+    </div>
+    <div class="reframe reveal" data-d="1">
+      <div class="rf-h a">通常の見方</div>
+      <div class="rf-h b">Re-Bridge の見方</div>
+      <div class="rf-c a"><s>赤字会社</s></div><div class="rf-c b">改善余地がある会社</div>
+      <div class="rf-c a"><s>古い店舗</s></div><div class="rf-c b">地域導線を持つ拠点</div>
+      <div class="rf-c a"><s>後継者不在</s></div><div class="rf-c b">承継可能な事業資産</div>
+      <div class="rf-c a"><s>顧客名簿</s></div><div class="rf-c b">送客・会員化できる資産</div>
+      <div class="rf-c a"><s>車両</s></div><div class="rf-c b">配送網</div>
+      <div class="rf-c a"><s>空きスペース</s></div><div class="rf-c b">収益化できる箱</div>
+      <div class="rf-c a"><s>職人</s></div><div class="rf-c b">技術資産</div>
+      <div class="rf-c a"><s>許認可</s></div><div class="rf-c b">新規参入障壁</div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRY / SUCCESS PATTERNS -->
+<section class="sec" id="industry" style="background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">業種は問いません</span>
+      <h2>え、こんな会社も<em>価値になるの？</em></h2>
+      <p>医療・介護・福祉だけでなく、飲食、美容、建設、運送、小売、製造、清掃、教育、農業、ペット、宿泊、地域サービスまで。残っている資産・顧客・許認可・導線の組み替え方で、価値の出し方は変わります。</p>
+    </div>
+    <div class="ind-strip reveal" data-d="1">
+      <span class="chip">医療・介護・福祉</span><span class="chip">飲食・食品</span><span class="chip">美容・サロン</span><span class="chip">建設・設備</span><span class="chip">運送・物流</span><span class="chip">小売・EC</span><span class="chip">製造・町工場</span><span class="chip">教育・スクール</span><span class="chip">農業・一次産業</span><span class="chip">ペット・動物関連</span><span class="chip">宿泊・観光</span><span class="chip">地域サービス</span>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><div class="ci"><h3>赤字の弁当屋</h3><span class="ck">Ex.01</span></div>
+        <dl><dt>残る価値</dt><dd>厨房・法人配達先・地域顧客・保健所許可</dd>
+        <dt>再生</dt><dd>介護施設・病院・企業昼食へ横展開</dd>
+        <dt>現金化</dt><dd class="hl">給食委託・冷凍弁当・宅配網の譲渡</dd></dl></div>
+      <div class="card reveal" data-d="1"><div class="ci"><h3>廃業寸前の美容室</h3><span class="ck">Ex.02</span></div>
+        <dl><dt>残る価値</dt><dd>店舗・顧客名簿・SNS・技術者</dd>
+        <dt>再生</dt><dd>訪問美容・介護施設提携・EC化粧品販売</dd>
+        <dt>現金化</dt><dd class="hl">FC化・店舗譲渡・顧客リスト活用</dd></dl></div>
+      <div class="card reveal"><div class="ci"><h3>小さな運送会社</h3><span class="ck">Ex.03</span></div>
+        <dl><dt>残る価値</dt><dd>車両・ドライバー・配送許可・既存ルート</dd>
+        <dt>再生</dt><dd>薬局配送・施設配送・夜間緊急配送</dd>
+        <dt>現金化</dt><dd class="hl">配送網として売却・業務委託化</dd></dl></div>
+      <div class="card reveal" data-d="1"><div class="ci"><h3>赤字の学習塾</h3><span class="ck">Ex.04</span></div>
+        <dl><dt>残る価値</dt><dd>生徒リスト・教室・地域信用・教材</dd>
+        <dt>再生</dt><dd>オンライン授業・外国人向け日本語・資格講座</dd>
+        <dt>現金化</dt><dd class="hl">教育コンテンツ販売・教室転貸・M&A</dd></dl></div>
+      <div class="card reveal"><div class="ci"><h3>古い町工場</h3><span class="ck">Ex.05</span></div>
+        <dl><dt>残る価値</dt><dd>職人・機械・取引先・加工技術</dd>
+        <dt>再生</dt><dd>小ロット特注・医療介護器具部品・海外受注</dd>
+        <dt>現金化</dt><dd class="hl">設備売却・技術承継・製造受託</dd></dl></div>
+      <div class="card reveal" data-d="1"><div class="ci"><h3>赤字のペットサロン</h3><span class="ck">Ex.06</span></div>
+        <dl><dt>残る価値</dt><dd>顧客・店舗・トリマー・地域口コミ</dd>
+        <dt>再生</dt><dd>動物病院・ペットホテル・高齢者向け訪問ケア連携</dd>
+        <dt>現金化</dt><dd class="hl">会員制・予約アプリ・提携先送客</dd></dl></div>
+      <div class="card reveal"><div class="ci"><h3>地方の空き旅館</h3><span class="ck">Ex.07</span></div>
+        <dl><dt>残る価値</dt><dd>建物・温泉・厨房・部屋・土地</dd>
+        <dt>再生</dt><dd>外国人長期滞在・社員研修・医療ツーリズム・介護寮</dd>
+        <dt>現金化</dt><dd class="hl">運営委託・用途変更・投資家への売却</dd></dl></div>
+      <div class="card reveal" data-d="1"><div class="ci"><h3>閉店予定の花屋</h3><span class="ck">Ex.08</span></div>
+        <dl><dt>残る価値</dt><dd>仕入れルート・配達先・冠婚葬祭・地域固定客</dd>
+        <dt>再生</dt><dd>葬儀社・病院・介護施設・法人受付花へ営業</dd>
+        <dt>現金化</dt><dd class="hl">定期配送・EC・法人契約</dd></dl></div>
+    </div>
+  </div>
+</section>
+
+<!-- PIVOT QUOTE -->
+<section class="pivot">
+  <div class="wrap reveal">
+    <p class="q"><em>“売れない”</em>を、<br><em>“売れる形”</em>に変える。</p>
+    <p class="qen">From "unsellable" to a shape that sells.</p>
+  </div>
+</section>
+
+<!-- NIGHT / FOUNDER -->
+<section class="night" id="founder">
+  <div class="wrap sec">
+    <div class="sec-head reveal" style="margin-bottom:0">
+      <span class="eyebrow">代表メッセージ</span>
+      <h2>なぜ私たちが、<br><em>再生案件を引き受けるのか。</em></h2>
+    </div>
+    <div class="founder-grid">
+      <div class="fg-left">
+        <p class="lede reveal">私は成功者だから、この事業を始めたわけではありません。<br><em>むしろ、逆です。</em></p>
+        <div class="sign reveal" data-d="1">
+          <div class="nm">JIN — Re-Bridge 代表</div>
+          <div class="ro">TAmJ Re-Bridge ／ タムジ株式会社</div>
+        </div>
+      </div>
+      <div class="fg-right">
+        <p class="reveal">会社の資金繰りのために、銀行融資、ノンバンク、個人借入、不動産担保、車両担保──借りられるものは借り、個人のお金も会社に入れました。資金が足りない。支払い日が来る。<strong>何度も口座を確認する朝が来る。</strong></p>
+        <p class="reveal" data-d="1">取引先から連絡が来る。税金の納付書が届く。社会保険料が来る。消費税が来る。給料日が来る。家賃が来る。返済日が来る。経営者なら、わかると思います。<strong>売上があることと、お金があることは違う。利益があることと、支払いができることも違う。</strong></p>
+        <p class="reveal" data-d="2" style="margin-bottom:14px">私が経験したのは、こういうものでした。</p>
+        <div class="fears reveal" data-d="2">
+          <span class="fear">資金ショートの恐怖</span><span class="fear">支払い遅延</span><span class="fear">差押えへの不安</span><span class="fear">税金・消費税の滞納</span><span class="fear">社会保険料の遅延</span><span class="fear">借入を抱えたまま眠る夜</span><span class="fear">誰にも相談できない孤独</span>
+        </div>
+        <p class="reveal" data-d="2">だから私は、決算書だけを見て会社を判断しません。私が見ているのは、<strong>顧客・人材・技術・許認可・地域信用・継続利用者・不動産・ブランド</strong>です。</p>
+        <p class="seen reveal" data-d="3">Re-Bridge の武器は、元から余裕のある再生屋ではなく、<em>自分も崖っぷちを経験した</em>再生屋であること。だから、本当に分かります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOPE -->
+<section class="sec" id="scope">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">引受対象</span>
+      <h2>「もう廃業しかない」と<br>思っている経営者のために。</h2>
+      <p>私たちは「なぜ赤字なのか」ではなく、「どこに価値が残っているのか」を探します。今月の支払いが厳しい。銀行に断られた。M&A会社に断られた。後継者がいない──そのどれでも、構いません。</p>
+    </div>
+    <div class="scope-grid reveal" data-d="1">
+      <div class="scope-cell">
+        <h3><span class="dot"></span>こんな状況でも、引き受けます</h3>
+        <div class="scope-list">
+          <span>赤字</span><span>債務超過</span><span>税金滞納</span><span>支払い遅延</span><span>後継者不在</span><span>M&A不成立</span><span>資金繰り悪化</span><span>金融機関に断られた</span>
+        </div>
+      </div>
+      <div class="scope-cell out">
+        <h3><span class="dot"></span>対象外</h3>
+        <div class="scope-list">
+          <span>反社会的勢力</span><span>刑事事件</span><span>重大な法令違反</span>
+        </div>
+        <p>これらに該当しない限り、まずはお話を聞かせてください。状況の段階は問いません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASSURANCE + LEDGER -->
+<section class="sec assure" style="background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="assure-grid">
+      <div class="reveal">
+        <span class="eyebrow">もし価値が無かったら</span>
+        <h2 style="margin-top:18px">価値が無ければ、<br>その<em>理由をお伝えします。</em></h2>
+        <p>診断費用はかかりません。当社から営業を行うこともありません。価値が見つからなかった場合は、なぜ無いのかを正直にお伝えします。</p>
+        <p>価値がある場合に限り、次の選択肢──廃業回避、事業承継、資金調達、事業再生、M&A、不動産活用──をご提案します。</p>
+      </div>
+      <div class="ledger reveal" data-d="1">
+        <div class="ledger-row">
+          <div class="lg-l lose top"><div class="lab">5分で失うもの</div><div class="big">なし</div></div>
+          <div class="lg-r lose top"><span>申込みに必要なのは、約5分の時間だけ</span></div>
+        </div>
+        <div class="ledger-row">
+          <div class="lg-l gain"><div class="lab">5分で得られる可能性</div><div class="big">7つの道</div></div>
+          <div class="lg-r"><span>廃業回避</span><span>事業承継</span><span>資金調達</span><span>事業再生</span><span>M&A</span><span>不動産活用</span><span>顧客資産の再評価</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY FORM -->
+<section class="apply sec" id="apply">
+  <div class="wrap">
+    <div class="apply-grid">
+      <div class="apply-intro">
+        <span class="eyebrow">無料・引受診断</span>
+        <h2>まずは<em>5分だけ</em>、<br>時間をください。</h2>
+        <p class="note">フォーム入力ではなく、5分で会社の可能性を確認する手続きです。いただいた内容は引受診断の目的にのみ使用します。</p>
+        <div class="steps">
+          <div><span class="s">01</span><p>下記フォームを送信(約5分)</p></div>
+          <div><span class="s">02</span><p>担当が内容を確認し、引受診断を実施</p></div>
+          <div><span class="s">03</span><p>価値の有無と、次の選択肢をご連絡</p></div>
+        </div>
+      </div>
+
+      <form class="rb" id="applyForm" novalidate>
+        <div class="formmsg" id="formMsg" role="status"></div>
+        <div class="frow two">
+          <div><label for="company">会社名 <span class="req">必須</span></label><input id="company" name="company" type="text" autocomplete="organization" required /></div>
+          <div><label for="name">お名前 <span class="req">必須</span></label><input id="name" name="name" type="text" autocomplete="name" required /></div>
+        </div>
+        <div class="frow two">
+          <div><label for="email">メールアドレス <span class="req">必須</span></label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+          <div><label for="phone">電話番号 <span class="opt">任意</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" /></div>
+        </div>
+        <div class="frow">
+          <label for="industry_scope">業種 <span class="req">必須</span></label>
+          <select id="industry_scope" name="industry_scope" required>
+            <option value="">業種を選択してください</option>
+            <option>医療・介護・福祉</option><option>飲食・食品</option><option>美容・サロン</option><option>建設・設備</option><option>運送・物流</option><option>小売・EC</option><option>製造・町工場</option><option>教育・スクール</option><option>農業・一次産業</option><option>ペット・動物関連</option><option>宿泊・観光</option><option>その他</option>
+          </select>
+        </div>
+        <div class="frow">
+          <label for="situation">現在の状況 <span class="opt">任意・複数可</span></label>
+          <input id="situation" name="situation" type="text" placeholder="例：赤字／債務超過／税金滞納／後継者不在／M&A不成立 など" />
+        </div>
+        <div class="frow">
+          <label for="unexpected_value">残っている資産 <span class="opt">任意</span></label>
+          <textarea id="unexpected_value" name="unexpected_value" placeholder="他社から見ると価値が低そうでも、実は残っている資産・顧客・権利・許認可・場所・人材があれば記載してください。"></textarea>
+          <p class="fhint">ここに書かれた一行が、再生の起点になることがあります。</p>
+        </div>
+        <label class="consent"><input type="checkbox" id="consent" required /><span>個人情報を引受診断の目的で利用することに同意します。当社から営業目的の連絡は行いません。</span></label>
+        <button type="submit" class="btn btn-primary" id="submitBtn">無料で引受診断を開始する <span class="arr">→</span></button>
+        <p class="formfoot">送信後、担当者よりご連絡します。反社会的勢力・刑事事件・重大な法令違反案件は対象外です。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="bn">Re<b>-</b>Bridge</div>
+        <p>売れない会社を、売れる形に。赤字・債務超過・後継者不在でも、残された価値から再生の道を架ける、無料・承継再生型M&A。運営：タムジ株式会社（TAmJ.Corp）。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Re-Bridge</h4>
+          <a href="#value">5分でわかること</a>
+          <a href="#reframe">価値の見方</a>
+          <a href="#industry">業種・事例</a>
+          <a href="#founder">代表より</a>
+        </div>
+        <div class="foot-col">
+          <h4>診断</h4>
+          <a href="#scope">引受対象</a>
+          <a href="#apply">無料で引受診断</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 TAmJ.Corp — Re-Bridge</span>
+      <span>承継再生型 M&A ／ 業種不問 ／ 引受診断 無料</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // config: Cloudflare Worker endpoint (JINがデプロイ後に有効化)
+  const RB_ENDPOINT = "https://rebridge-api.tamjump.com/apply";
+
+  // nav scrolled state
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // burger
+  const burger = document.getElementById('burger');
+  const navlinks = document.getElementById('navlinks');
+  burger.addEventListener('click', () => navlinks.classList.toggle('open'));
+  navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
+
+  // hero in
+  requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById('hero').classList.add('in')));
+
+  // reveal observer
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.16, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // form
+  const form = document.getElementById('applyForm');
+  const msg = document.getElementById('formMsg');
+  const btn = document.getElementById('submitBtn');
+  const setMsg = (text, ok) => { msg.textContent = text; msg.className = 'formmsg ' + (ok ? 'ok' : 'err'); msg.scrollIntoView({behavior:'smooth', block:'center'}); };
+
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    if (!form.checkValidity()){
+      setMsg('未入力の必須項目があります。会社名・お名前・メール・業種・同意をご確認ください。', false);
+      form.reportValidity(); return;
+    }
+    const data = Object.fromEntries(new FormData(form).entries());
+    data.consent = document.getElementById('consent').checked;
+    data.submitted_at = new Date().toISOString();
+    btn.disabled = true; const orig = btn.innerHTML; btn.innerHTML = '送信しています…';
+    try {
+      const res = await fetch(RB_ENDPOINT, {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error('status ' + res.status);
+      setMsg('申込みを受け付けました。担当より追ってご連絡します。5分の手続き、ありがとうございました。', true);
+      form.reset();
+    } catch (err) {
+      setMsg('送信に失敗しました。お手数ですが時間をおいて再度お試しいただくか、直接ご連絡ください。', false);
+    } finally {
+      btn.disabled = false; btn.innerHTML = orig;
+    }
+  });
+</script>
+</body>
+</html>
