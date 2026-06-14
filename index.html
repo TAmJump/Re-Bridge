@@ -695,8 +695,15 @@
     btn.disabled=true; const o=btn.innerHTML; btn.innerHTML='送信しています…';
     try{
       const r=await fetch(RB_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-      if(!r.ok) throw 0;
-      setMsg('受け付けました。ご記入の電話番号へ、折り返しご連絡します。確認メールもお送りしました。',true); form.reset(); litWrap.style.display='none';
+      const j=await r.json().catch(()=>({}));
+      if(!r.ok||!j.ok) throw 0;
+      form.reset(); litWrap.style.display='none';
+      msg.className='formmsg ok';
+      const base='受け付けました。ご記入の電話番号へ、折り返しご連絡します。確認メールもお送りしました。';
+      msg.innerHTML = j.token
+        ? base+'<br>状況の確認・メッセージのやり取りは <a href="https://rebridge-api.tamjump.com/t/'+j.token+'">専用ページ</a> から行えます（このURLは大切に保管してください）。'
+        : base;
+      msg.scrollIntoView({behavior:'smooth',block:'center'});
     }catch(_){ setMsg('送信できませんでした。少し時間をおいて、もう一度お試しください。',false); }
     finally{ btn.disabled=false; btn.innerHTML=o; }
   });
