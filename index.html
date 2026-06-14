@@ -233,6 +233,8 @@
   .formmsg{display:none;font-size:14px;line-height:1.7;padding:14px 16px;border-radius:2px;margin-bottom:18px}
   .formmsg.ok{display:block;background:rgba(28,132,207,.08);border:1px solid var(--accent);color:var(--accent-deep)}
   .formmsg.err{display:block;background:#eaf4fb;border:1px solid var(--accent);color:var(--accent-deep)}
+  .mailbtn{display:inline-flex;align-items:center;gap:.5em;margin-top:11px;background:var(--accent);color:#fff;text-decoration:none;font-family:var(--gothic);font-weight:500;font-size:14px;padding:11px 20px;border-radius:2px;transition:background .25s}
+  .mailbtn:hover{background:var(--accent-deep)}
 
   footer{padding:70px 0 38px;border-top:1px solid var(--line)}
   .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:38px}
@@ -617,8 +619,16 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
   const RB_ENDPOINT="https://rebridge-api.tamjump.com/apply";
+  const RB_FALLBACK_EMAIL="info@tamjump.com"; // ← 接続失敗時のメール送信先（必要なら変更）
   const form=document.getElementById('applyForm'),msg=document.getElementById('formMsg'),btn=document.getElementById('submitBtn');
   const setMsg=(t,ok)=>{msg.textContent=t;msg.className='formmsg '+(ok?'ok':'err');msg.scrollIntoView({behavior:'smooth',block:'center'});};
+  const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  function mailtoFor(d){
+    const body=['会社名: '+(d.company||''),'お名前: '+(d.name||''),'メール: '+(d.email||''),
+      '電話: '+(d.phone||'-'),'業種: '+(d.industry_scope||''),'現在の状況: '+(d.situation||'-'),
+      '残っている資産:\n'+(d.unexpected_value||'-')].join('\n');
+    return 'mailto:'+RB_FALLBACK_EMAIL+'?subject='+encodeURIComponent('【Re-Bridge】引受診断 申込み：'+(d.company||''))+'&body='+encodeURIComponent(body);
+  }
   form.addEventListener('submit',async(ev)=>{
     ev.preventDefault();
     if(!form.checkValidity()){setMsg('未入力の必須項目があります。会社名・お名前・メール・業種・同意をご確認ください。',false);form.reportValidity();return;}
@@ -629,7 +639,12 @@
       const r=await fetch(RB_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
       if(!r.ok) throw 0;
       setMsg('受け付けました。担当より追ってご連絡します。5分の手続き、ありがとうございました。',true); form.reset();
-    }catch(_){ setMsg('送信に失敗しました。時間をおいて再度お試しいただくか、直接ご連絡ください。',false); }
+    }catch(_){
+      msg.className='formmsg err'; msg.style.display='block';
+      msg.innerHTML='ただいま送信サーバーが応答しません。下のボタンからメールで送信いただけます（入力内容は自動で本文に入ります）。<br>'
+        +'<a class="mailbtn" href="'+mailtoFor(data)+'">メールで送信する →</a>';
+      msg.scrollIntoView({behavior:'smooth',block:'center'});
+    }
     finally{ btn.disabled=false; btn.innerHTML=o; }
   });
 </script>
