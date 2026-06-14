@@ -26,14 +26,18 @@ export default {
 
     let b; try{ b=await req.json(); }catch{ return json({error:"invalid_json"},400,req); }
     const company=String(b.company||"").trim(), name=String(b.name||"").trim(),
-          email=String(b.email||"").trim(), industry=String(b.industry_scope||"").trim();
-    if(!company||!name||!email||!industry||b.consent!==true) return json({error:"missing_fields"},422,req);
+          email=String(b.email||"").trim(), phone=String(b.phone||"").trim();
+    // 必須: 会社名・お名前・電話・メール・反社でない確認
+    if(!company||!name||!email||!phone||b.not_antisocial!==true) return json({error:"missing_fields"},422,req);
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return json({error:"invalid_email"},422,req);
 
+    const litigation=(String(b.litigation||"").trim()==="あり")?"あり":"なし";
     const row={
-      id:crypto.randomUUID(), company, name, email,
-      phone:String(b.phone||"").trim(), industry_scope:industry,
-      situation:String(b.situation||"").trim(), unexpected_value:String(b.unexpected_value||"").trim(),
+      id:crypto.randomUUID(), company, name, email, phone,
+      region:String(b.region||"").trim(),
+      litigation, litigation_note:String(b.litigation_note||"").trim(),
+      debt:String(b.debt||"").trim(),
+      trouble:String(b.trouble||"").trim(),
       created_at:new Date().toISOString(),
       ua:req.headers.get("user-agent")||"", ip:req.headers.get("cf-connecting-ip")||"",
     };
@@ -43,9 +47,9 @@ export default {
     if(env.DB){
       try{
         await env.DB.prepare(
-          `INSERT INTO applications (id,company,name,email,phone,industry_scope,situation,unexpected_value,created_at,ua,ip)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?)`
-        ).bind(row.id,row.company,row.name,row.email,row.phone,row.industry_scope,row.situation,row.unexpected_value,row.created_at,row.ua,row.ip).run();
+          `INSERT INTO applications (id,company,name,email,phone,region,litigation,litigation_note,debt,trouble,created_at,ua,ip)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`
+        ).bind(row.id,row.company,row.name,row.email,row.phone,row.region,row.litigation,row.litigation_note,row.debt,row.trouble,row.created_at,row.ua,row.ip).run();
         stored=true;
       }catch(_){}
     }
@@ -61,22 +65,56 @@ export default {
             from: env.FROM_EMAIL || "Re-Bridge <noreply@tamjump.com>",
             to: env.NOTIFY_TO,
             reply_to: email,
-            subject:`[ReBridge／M&A] 引受診断 申込み：${company}`,
+            subject:`[Re-Bridge] 申込み：${company}／☎ ${phone}`,
             text:
-`会社名: ${company}
-お名前: ${name}
-メール: ${email}
-電話: ${row.phone||"-"}
-業種: ${industry}
-現在の状況: ${row.situation||"-"}
-残っている資産:
-${row.unexpected_value||"-"}
+`☎ 電話：${phone}
 
-受付: ${row.created_at}
-保存(D1): ${stored?"OK":"未"}`,
+会社名：${company}
+お名前：${name}
+メール：${email}
+地域：${row.region||"-"}
+訴訟・係争：${litigation}${row.litigation_note?`（${row.litigation_note}）`:""}
+借入のおおよそ：${row.debt||"-"}
+今いちばん大変なこと：${row.trouble||"-"}
+
+受付：${row.created_at}
+保存(D1)：${stored?"OK":"未"}`,
           }),
         });
         emailed=r.ok;
+      }catch(_){}
+    }
+
+    // 申込者への自動返信（受付確認）。reply_to は info@tamjump.com 等にして「返信」が届くように。失敗しても受付は成立。
+    if(env.RESEND_API_KEY){
+      try{
+        await fetch("https://api.resend.com/emails",{
+          method:"POST",
+          headers:{ "Authorization":`Bearer ${env.RESEND_API_KEY}`, "Content-Type":"application/json" },
+          body:JSON.stringify({
+            from: env.FROM_EMAIL || "Re-Bridge <noreply@tamjump.com>",
+            to: email,
+            reply_to: env.REPLY_TO || env.NOTIFY_TO || "info@tamjump.com",
+            subject:"【Re-Bridge】お申込みを受け付けました",
+            text:
+`${name} 様
+
+お申込みをいただき、ありがとうございます。
+Re-Bridge（タムジ株式会社）の大下と申します。
+
+ご記入いただいた内容は、確かに受け取りました。
+内容を確認のうえ、ご記入の電話番号へ折り返しご連絡いたします。
+
+どのようなご状況でも、私たちにできる最大限のご協力をさせていただきます。
+ご事情によっては、直接お会いしてお話しすることも可能です。
+
+このメールにそのままご返信いただければ、私に直接届きます。
+
+──────────
+大下 甚（おおした じん）
+Re-Bridge ／ タムジ株式会社`,
+          }),
+        });
       }catch(_){}
     }
 
