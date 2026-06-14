@@ -2,16 +2,17 @@ name = "rebridge-api"
 main = "worker.js"
 compatibility_date = "2025-06-01"
 
-# rebridge-api.tamjump.com にルートを設定（Cloudflareダッシュボード or 下記）
-# [[routes]]
-# pattern = "rebridge-api.tamjump.com/apply"
-# custom_domain = true
+# これで deploy 時に rebridge-api.tamjump.com を自動作成（tamjump.com が同一Cloudflareアカウントにあるため）
+routes = [
+  { pattern = "rebridge-api.tamjump.com", custom_domain = true }
+]
 
+# wrangler d1 create rebridge で出た database_id をここに貼る
 [[d1_databases]]
 binding = "DB"
 database_name = "rebridge"
-database_id = "<D1_DATABASE_ID>"   # wrangler d1 create rebridge で取得して差し替え
+database_id = "<PASTE_D1_DATABASE_ID>"
 
-# 任意：メール通知を使う場合
-# wrangler secret put RESEND_API_KEY
-# wrangler secret put NOTIFY_TO
+# 任意：メール通知（Resend）
+#   npx wrangler secret put RESEND_API_KEY
+#   npx wrangler secret put NOTIFY_TO
