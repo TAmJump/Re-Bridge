@@ -183,6 +183,18 @@
   .scope-cell.out p{font-size:13px;color:var(--ink-faint);margin-top:18px;line-height:1.8}
 
   /* ===== ASSURE + LEDGER ===== */
+  .about{padding:100px 0;border-top:1px solid var(--line)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  .about-l h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.2vw,38px);line-height:1.38;margin:16px 0 0}
+  .about-l h2 em{font-style:normal;color:var(--accent)}
+  .about-l p{color:var(--ink-soft);font-size:15.5px;line-height:2.05;margin-top:20px}
+  .about-acts .act{padding:18px 0;border-bottom:1px solid var(--line)}
+  .about-acts .act:first-child{border-top:1px solid var(--line)}
+  .about-acts .act h3{font-family:var(--gothic);font-size:15px;font-weight:600;color:var(--ink);margin:0 0 5px}
+  .about-acts .act p{font-size:13.5px;color:var(--ink-soft);line-height:1.7;margin:0}
+  .about-exit{margin-top:28px;border-left:2px solid var(--accent);padding-left:22px}
+  .about-exit h3{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);margin:0 0 10px;line-height:1.5}
+  .about-exit p{font-size:14.5px;color:var(--ink-soft);line-height:1.95;margin:0}
   .assure{padding:100px 0;border-top:1px solid var(--line)}
   .assure-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
   .assure h2{font-family:var(--serif);font-weight:600;font-size:clamp(23px,3vw,36px);line-height:1.4}
@@ -228,6 +240,13 @@
   .fhint{font-size:12px;color:var(--ink-faint);margin-top:7px;line-height:1.6}
   .consent{display:flex;gap:11px;align-items:flex-start;margin:4px 0 22px;font-size:13px;color:var(--ink-soft);line-height:1.7}
   .consent input{width:17px;height:17px;flex:0 0 auto;margin-top:2px;accent-color:var(--accent)}
+  .seg{display:flex;border:1px solid var(--line-strong);border-radius:2px;overflow:hidden}
+  .seg label{flex:1;margin:0;text-align:center;padding:13px;cursor:pointer;font-weight:500;color:var(--ink-soft);background:#fff;border-left:1px solid var(--line);transition:.2s}
+  .seg label:first-child{border-left:0}
+  .seg input{display:none}
+  .seg input:checked+span{color:var(--accent);font-weight:600}
+  .seg label:has(input:checked){background:var(--accent)}
+  .seg label:has(input:checked) span{color:#fff}
   form.rb .btn-primary{width:100%;justify-content:center;font-size:16px;padding:18px}
   .formfoot{font-size:12px;color:var(--ink-faint);margin-top:15px;text-align:center;line-height:1.7}
   .formmsg{display:none;font-size:14px;line-height:1.7;padding:14px 16px;border-radius:2px;margin-bottom:18px}
@@ -272,6 +291,7 @@
     .rp-act{align-items:flex-start}
     .case.tx{grid-column:span 12}
     .frow.two{grid-template-columns:1fr}
+    .about-grid{grid-template-columns:1fr;gap:40px}
     form.rb{padding:26px 20px}
     .lg-row{grid-template-columns:1fr}.lg-l{border-right:0;border-bottom:1px solid var(--line)}
   }
@@ -301,6 +321,7 @@
       <a href="#cases">8つの再評価</a>
       <a href="#scope">引受対象</a>
       <a href="#founder">代表より</a>
+      <a href="#about">運営者</a>
       <a href="#apply" class="nav-cta">無料で再評価</a>
     </nav>
     <button class="burger" id="burger" aria-label="メニュー"><span></span><span></span><span></span></button>
@@ -472,6 +493,31 @@
   </div>
 </section>
 
+<!-- ===== ABOUT / OPERATOR ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-l reveal">
+        <span class="kick">運営者について</span>
+        <h2>私たちは、医療の現場を<br><em>支えてきた事業者です。</em></h2>
+        <p>Re-Bridge を運営するタムジ株式会社は、医療・福祉を基盤とする事業者です。会社を引き受ける相手が「どこの誰か分からない買い手」ではない――まず、そのことをお伝えしておきます。</p>
+        <p>Re-Bridge を含む各事業で得た利益は、事業の再生と、医療を必要としている現場へ充てていきます。あなたから引き受けた会社で生まれた価値が、また別の、困っている誰かに回る。それが私たちの考える「価値の出し方」です。</p>
+      </div>
+      <div class="about-r reveal" data-d="1">
+        <div class="about-acts">
+          <div class="act"><h3>医療・福祉</h3><p>医療・介護・福祉領域を基盤とする事業運営。</p></div>
+          <div class="act"><h3>へき地医療支援</h3><p>医療が届きにくい地域への支援活動。</p></div>
+          <div class="act"><h3>海外救急医療支援</h3><p>海外で医療を必要とする人への救急支援。</p></div>
+        </div>
+        <div class="about-exit">
+          <h3>出口は、M&Aだけではありません。</h3>
+          <p>資金調達（クラウドファンディング等）の代理申請を含め、その会社に合った方法を一緒に探します。形式的な枠に当てはめず、いま本当に必要な手を打ちます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== ASSURE ===== -->
 <section class="assure">
   <div class="wrap">
@@ -504,10 +550,10 @@
         <span class="kick">無料・再評価</span>
         <h2>まずは<em>5分だけ</em>、<br>時間をください。</h2>
         <div class="checklist">
-          <div><span class="bx"></span><p>廃業しかないと思っていた会社に、価値が残っているか</p></div>
-          <div><span class="bx"></span><p>通常のM&Aで断られた会社でも、再生できる可能性があるか</p></div>
-          <div><span class="bx"></span><p>後継者不在でも、事業を残せるか</p></div>
-          <div><span class="bx"></span><p>自分や家族に、現金を残せる可能性があるか</p></div>
+          <div><span class="bx"></span><p>反社会的勢力でなければ、まずはお受けします</p></div>
+          <div><span class="bx"></span><p>訴訟を抱えていても、内容次第で一緒に考えます</p></div>
+          <div><span class="bx"></span><p>借入の大きさで、お断りすることはありません</p></div>
+          <div><span class="bx"></span><p>ご記入の電話番号へ、折り返しご連絡します</p></div>
         </div>
       </div>
       <form class="rb" id="applyForm" novalidate>
@@ -517,28 +563,41 @@
           <div><label for="name">お名前 <span class="req">必須</span></label><input id="name" name="name" type="text" autocomplete="name" required /></div>
         </div>
         <div class="frow two">
-          <div><label for="email">メール <span class="req">必須</span></label><input id="email" name="email" type="email" autocomplete="email" required /></div>
-          <div><label for="phone">電話番号 <span class="opt">任意</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" /></div>
+          <div><label for="phone">電話番号 <span class="req">必須</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="折り返しの連絡先" required /></div>
+          <div><label for="email">メール <span class="req">必須</span></label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required /></div>
+        </div>
+        <div class="frow two">
+          <div>
+            <label for="pref">都道府県 <span class="opt">任意</span></label>
+            <select id="pref" name="pref"><option value="">選択してください</option><option>北海道</option><option>青森県</option><option>岩手県</option><option>宮城県</option><option>秋田県</option><option>山形県</option><option>福島県</option><option>茨城県</option><option>栃木県</option><option>群馬県</option><option>埼玉県</option><option>千葉県</option><option>東京都</option><option>神奈川県</option><option>新潟県</option><option>富山県</option><option>石川県</option><option>福井県</option><option>山梨県</option><option>長野県</option><option>岐阜県</option><option>静岡県</option><option>愛知県</option><option>三重県</option><option>滋賀県</option><option>京都府</option><option>大阪府</option><option>兵庫県</option><option>奈良県</option><option>和歌山県</option><option>鳥取県</option><option>島根県</option><option>岡山県</option><option>広島県</option><option>山口県</option><option>徳島県</option><option>香川県</option><option>愛媛県</option><option>高知県</option><option>福岡県</option><option>佐賀県</option><option>長崎県</option><option>熊本県</option><option>大分県</option><option>宮崎県</option><option>鹿児島県</option><option>沖縄県</option></select>
+          </div>
+          <div><label for="city">市区町村 <span class="opt">任意</span></label><input id="city" name="city" type="text" autocomplete="address-level2" placeholder="例：札幌市中央区" /></div>
         </div>
         <div class="frow">
-          <label for="industry_scope">業種 <span class="req">必須</span></label>
-          <select id="industry_scope" name="industry_scope" required>
-            <option value="">業種を選択してください</option>
-            <option>医療・介護・福祉</option><option>飲食・食品</option><option>美容・サロン</option><option>建設・設備</option><option>運送・物流</option><option>小売・EC</option><option>製造・町工場</option><option>教育・スクール</option><option>農業・一次産業</option><option>ペット・動物関連</option><option>宿泊・観光</option><option>その他</option>
+          <label>訴訟・係争 <span class="opt">任意</span></label>
+          <div class="seg" role="radiogroup" aria-label="訴訟・係争">
+            <label><input type="radio" name="litigation" value="なし" checked /><span>なし</span></label>
+            <label><input type="radio" name="litigation" value="あり" /><span>あり</span></label>
+          </div>
+          <div id="litWrap" style="display:none;margin-top:12px">
+            <input id="litigation_note" name="litigation_note" type="text" placeholder="差し支えなければ、内容を一行で（任意）" />
+            <p class="fhint">抱えていても、内容次第で一緒に考えます。</p>
+          </div>
+        </div>
+        <div class="frow">
+          <label for="debt">借入のおおよそ <span class="opt">任意</span></label>
+          <select id="debt" name="debt">
+            <option value="">選択してください</option>
+            <option>〜1千万円</option><option>〜5千万円</option><option>〜1億円</option><option>1億円以上</option><option>わからない</option>
           </select>
         </div>
         <div class="frow">
-          <label for="situation">現在の状況 <span class="opt">任意</span></label>
-          <input id="situation" name="situation" type="text" placeholder="例：赤字／債務超過／税金滞納／後継者不在 など" />
+          <label for="trouble">今いちばん大変なこと <span class="opt">任意</span></label>
+          <input id="trouble" name="trouble" type="text" placeholder="例：今月の支払い／後継者がいない／銀行に断られた など" />
         </div>
-        <div class="frow">
-          <label for="unexpected_value">残っている資産 <span class="opt">任意</span></label>
-          <textarea id="unexpected_value" name="unexpected_value" placeholder="他社から見ると価値が低そうでも、実は残っている資産・顧客・権利・許認可・場所・人材があれば記載してください。"></textarea>
-          <p class="fhint">ここに書かれた一行が、再生の起点になることがあります。</p>
-        </div>
-        <label class="consent"><input type="checkbox" id="consent" required /><span>個人情報を再評価の目的で利用することに同意します。当社から営業目的の連絡は行いません。</span></label>
-        <button type="submit" class="btn btn-primary" id="submitBtn">無料で再評価を開始する <span class="arr">→</span></button>
-        <p class="formfoot">送信後、担当者よりご連絡します。反社会的勢力・刑事事件・重大な法令違反案件は対象外です。</p>
+        <label class="consent"><input type="checkbox" id="not_antisocial" required /><span>反社会的勢力・暴力団との関係はありません。入力情報を、ご相談対応の目的で利用することに同意します。</span></label>
+        <button type="submit" class="btn btn-primary" id="submitBtn">この内容で申し込む <span class="arr">→</span></button>
+        <p class="formfoot">いただいた情報は、ご相談対応の目的にのみ利用します。反社会的勢力・刑事事件・重大な法令違反は対象外です。</p>
       </form>
     </div>
   </div>
@@ -554,7 +613,7 @@
         <p>同じ会社を、別の見方で価値に変える。赤字・債務超過・後継者不在でも、残された価値から再生の出口を引く、無料・承継再生型M&A。運営：タムジ株式会社（TAmJ.Corp）。</p>
       </div>
       <div class="foot-links">
-        <div class="foot-col"><h4>Re-Bridge</h4><a href="#cases">8つの再評価</a><a href="#founder">代表より</a><a href="#scope">引受対象</a></div>
+        <div class="foot-col"><h4>Re-Bridge</h4><a href="#cases">8つの再評価</a><a href="#founder">代表より</a><a href="#scope">引受対象</a><a href="#about">運営者</a></div>
         <div class="foot-col"><h4>再評価</h4><a href="#apply">無料で再評価</a></div>
       </div>
     </div>
@@ -621,16 +680,23 @@
   const RB_ENDPOINT="https://rebridge-api.tamjump.com/apply";
   const form=document.getElementById('applyForm'),msg=document.getElementById('formMsg'),btn=document.getElementById('submitBtn');
   const setMsg=(t,ok)=>{msg.textContent=t;msg.className='formmsg '+(ok?'ok':'err');msg.scrollIntoView({behavior:'smooth',block:'center'});};
+  const litWrap=document.getElementById('litWrap');
+  form.querySelectorAll('input[name="litigation"]').forEach(r=>r.addEventListener('change',()=>{
+    litWrap.style.display=(form.querySelector('input[name="litigation"]:checked').value==='あり')?'block':'none';
+  }));
   form.addEventListener('submit',async(ev)=>{
     ev.preventDefault();
-    if(!form.checkValidity()){setMsg('未入力の必須項目があります。会社名・お名前・メール・業種・同意をご確認ください。',false);form.reportValidity();return;}
+    if(!form.checkValidity()){setMsg('未入力の必須項目があります。会社名・お名前・電話番号・メール・確認チェックをご確認ください。',false);form.reportValidity();return;}
     const data=Object.fromEntries(new FormData(form).entries());
-    data.consent=document.getElementById('consent').checked; data.submitted_at=new Date().toISOString();
+    data.not_antisocial=document.getElementById('not_antisocial').checked;
+    const pref=(data.pref||'').trim(), city=(data.city||'').trim();
+    data.region=[pref,city].filter(Boolean).join(' ');
+    data.submitted_at=new Date().toISOString();
     btn.disabled=true; const o=btn.innerHTML; btn.innerHTML='送信しています…';
     try{
       const r=await fetch(RB_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
       if(!r.ok) throw 0;
-      setMsg('受け付けました。担当より追ってご連絡します。5分の手続き、ありがとうございました。',true); form.reset();
+      setMsg('受け付けました。ご記入の電話番号へ、折り返しご連絡します。確認メールもお送りしました。',true); form.reset(); litWrap.style.display='none';
     }catch(_){ setMsg('送信できませんでした。少し時間をおいて、もう一度お試しください。',false); }
     finally{ btn.disabled=false; btn.innerHTML=o; }
   });
