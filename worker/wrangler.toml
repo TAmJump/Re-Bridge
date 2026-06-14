@@ -15,4 +15,4 @@ FROM_EMAIL = "Re-Bridge <noreply@tamjump.com>"
 [[d1_databases]]
 binding = "DB"
 database_name = "rebridge"
-database_id = "PASTE_DATABASE_ID_HERE"
+database_id = "f411814b-4654-497e-b474-ec7677c0b1f9"
