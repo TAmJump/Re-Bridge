@@ -619,16 +619,8 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
   const RB_ENDPOINT="https://rebridge-api.tamjump.com/apply";
-  const RB_FALLBACK_EMAIL="info@tamjump.com"; // ← 接続失敗時のメール送信先（必要なら変更）
   const form=document.getElementById('applyForm'),msg=document.getElementById('formMsg'),btn=document.getElementById('submitBtn');
   const setMsg=(t,ok)=>{msg.textContent=t;msg.className='formmsg '+(ok?'ok':'err');msg.scrollIntoView({behavior:'smooth',block:'center'});};
-  const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  function mailtoFor(d){
-    const body=['会社名: '+(d.company||''),'お名前: '+(d.name||''),'メール: '+(d.email||''),
-      '電話: '+(d.phone||'-'),'業種: '+(d.industry_scope||''),'現在の状況: '+(d.situation||'-'),
-      '残っている資産:\n'+(d.unexpected_value||'-')].join('\n');
-    return 'mailto:'+RB_FALLBACK_EMAIL+'?subject='+encodeURIComponent('【Re-Bridge】引受診断 申込み：'+(d.company||''))+'&body='+encodeURIComponent(body);
-  }
   form.addEventListener('submit',async(ev)=>{
     ev.preventDefault();
     if(!form.checkValidity()){setMsg('未入力の必須項目があります。会社名・お名前・メール・業種・同意をご確認ください。',false);form.reportValidity();return;}
@@ -639,12 +631,7 @@
       const r=await fetch(RB_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
       if(!r.ok) throw 0;
       setMsg('受け付けました。担当より追ってご連絡します。5分の手続き、ありがとうございました。',true); form.reset();
-    }catch(_){
-      msg.className='formmsg err'; msg.style.display='block';
-      msg.innerHTML='ただいま送信サーバーが応答しません。下のボタンからメールで送信いただけます（入力内容は自動で本文に入ります）。<br>'
-        +'<a class="mailbtn" href="'+mailtoFor(data)+'">メールで送信する →</a>';
-      msg.scrollIntoView({behavior:'smooth',block:'center'});
-    }
+    }catch(_){ setMsg('送信できませんでした。少し時間をおいて、もう一度お試しください。',false); }
     finally{ btn.disabled=false; btn.innerHTML=o; }
   });
 </script>
