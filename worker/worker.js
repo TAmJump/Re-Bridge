@@ -299,7 +299,7 @@ tbody tr{cursor:pointer}tbody tr:hover{background:#f7fafc}
 
 const ADMIN_HTML = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Re-Bridge 管理</title><style>${PAGE_CSS}</style></head><body>
 <div class="wrap">
-  <div class="top"><span class="brand">Re<em>／</em>Bridge 管理</span><button class="btn ghost" id="logout" style="display:none">ログアウト</button></div>
+  <div class="top"><span class="brand">Re<em>／</em>Bridge 管理</span><div style="display:flex;gap:8px;align-items:center"><a class="btn ghost" href="https://rebridge.tamjump.com/" style="text-decoration:none">← サイトを見る</a><button class="btn ghost" id="logout" style="display:none">ログアウト</button></div></div>
 
   <div id="login" style="display:none">
     <div class="center">
