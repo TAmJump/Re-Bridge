@@ -146,13 +146,13 @@ async function handleApply(req,env){
     const link = stored ? `\n\n状況の確認・メッセージのやり取りはこちらのページから行えます：\n${SELF}/t/${row.token}\n（このURLは大切に保管してください）` : "";
     await sendMail(env,{
       to:email,
-      reply_to: env.REPLY_TO || env.NOTIFY_TO || "info@tamjump.com",
+      reply_to: env.REPLY_TO || env.NOTIFY_TO || "animalb001@gmail.com",
       subject:"【Re-Bridge】お申込みを受け付けました",
       text:
 `${name} 様
 
 お申込みをいただき、ありがとうございます。
-Re-Bridge（タムジ株式会社）の大下と申します。
+Re-Bridge（株式会社GMS）の大下と申します。
 
 ご記入いただいた内容は、確かに受け取りました。
 内容を確認のうえ、ご記入の電話番号へ折り返しご連絡いたします。
@@ -162,7 +162,7 @@ Re-Bridge（タムジ株式会社）の大下と申します。
 
 ──────────
 大下 甚（おおした じん）
-Re-Bridge ／ タムジ株式会社`,
+Re-Bridge ／ 株式会社GMS`,
     });
   }
 
@@ -250,7 +250,7 @@ async function adminApi(req,env,path,m){
     const now=new Date().toISOString();
     await env.DB.prepare("INSERT INTO messages (id,app_id,sender,body,created_at) VALUES (?,?,?,?,?)").bind(crypto.randomUUID(),id,"admin",body,now).run();
     await env.DB.prepare("UPDATE applications SET updated_at=? WHERE id=?").bind(now,id).run();
-    await sendMail(env,{to:a.email,reply_to:env.REPLY_TO||env.NOTIFY_TO||"info@tamjump.com",subject:"【Re-Bridge】メッセージが届きました",
+    await sendMail(env,{to:a.email,reply_to:env.REPLY_TO||env.NOTIFY_TO||"animalb001@gmail.com",subject:"【Re-Bridge】メッセージが届きました",
       text:`Re-Bridge からメッセージが届きました。\n\n内容の確認・ご返信はこちらのページから：\n${SELF}/t/${a.token}`});
     return json({ok:true},200,req);
   }
