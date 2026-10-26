@@ -8,10 +8,10 @@
 <meta property="og:title" content="Re-Bridge ｜ 事業再評価器" />
 <meta property="og:description" content="私たちは会社を見ていない。その中に残る、まだ価値になるものを見ている。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://rebridge.tamjump.com/" />
-<meta property="og:image" content="https://rebridge.tamjump.com/assets/og.jpg" />
+<meta property="og:url" content="https://rebridge.115en.com/" />
+<meta property="og:image" content="https://rebridge.115en.com/assets/og.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://rebridge.tamjump.com/assets/og.jpg" />
+<meta name="twitter:image" content="https://rebridge.115en.com/assets/og.jpg" />
 <meta name="theme-color" content="#ffffff" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -435,7 +435,7 @@
     </div>
     <p class="reveal-hint reveal">写真にカーソルを合わせると、その会社の価値が立ち上がります（スマホはタップ）。</p>
     <div style="text-align:center;margin-top:44px" class="reveal">
-      <a href="https://develop.tamjump.com/listings/#properties" style="display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:#16242e;color:#eef5fb;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.04em;border-radius:10px">現在お預かりの案件を見る<span style="font-size:11px;opacity:.65;font-weight:500;letter-spacing:.02em">守秘・要パスワード</span> &rarr;</a>
+      <a href="https://develop.115en.com/listings/#properties" style="display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:#16242e;color:#eef5fb;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.04em;border-radius:10px">現在お預かりの案件を見る<span style="font-size:11px;opacity:.65;font-weight:500;letter-spacing:.02em">守秘・要パスワード</span> &rarr;</a>
     </div>
   </div>
 </section>
@@ -617,9 +617,9 @@
         <p>同じ会社を、別の見方で価値に変える。赤字・債務超過・後継者不在でも、残された価値から再生の出口を引く、無料・承継再生型M&A。運営：株式会社GMS（〒176-0013 東京都練馬区豊玉中三丁目7番5号）。担当：大下 甚／animalb001@gmail.com</p>
       </div>
       <div class="foot-links">
-        <div class="foot-col"><h4>Re-Bridge</h4><a href="#cases">8つの再評価</a><a href="#founder">代表より</a><a href="#scope">引受対象</a><a href="#about">運営者</a><a href="https://develop.tamjump.com/company/">会社概要</a></div>
+        <div class="foot-col"><h4>Re-Bridge</h4><a href="#cases">8つの再評価</a><a href="#founder">代表より</a><a href="#scope">引受対象</a><a href="#about">運営者</a><a href="https://develop.115en.com/company/">会社概要</a></div>
         <div class="foot-col"><h4>再評価</h4><a href="#apply">無料で再評価</a></div>
-        <div class="foot-col"><h4>管理</h4><a href="https://rebridge-api.tamjump.com/admin">管理ログイン</a></div>
+        <div class="foot-col"><h4>管理</h4><a href="https://rebridge-api.115en.com/admin">管理ログイン</a></div>
       </div>
     </div>
     <div class="foot-bottom">
@@ -682,7 +682,7 @@
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.16,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  const RB_ENDPOINT="https://rebridge-api.tamjump.com/apply";
+  const RB_ENDPOINT="https://rebridge-api.115en.com/apply";
   const form=document.getElementById('applyForm'),msg=document.getElementById('formMsg'),btn=document.getElementById('submitBtn');
   const setMsg=(t,ok)=>{msg.textContent=t;msg.className='formmsg '+(ok?'ok':'err');msg.scrollIntoView({behavior:'smooth',block:'center'});};
   const litWrap=document.getElementById('litWrap');
@@ -706,7 +706,7 @@
       msg.className='formmsg ok';
       const base='受け付けました。ご記入の電話番号へ、折り返しご連絡します。確認メールもお送りしました。';
       msg.innerHTML = j.token
-        ? base+'<br>状況の確認・メッセージのやり取りは <a href="https://rebridge-api.tamjump.com/t/'+j.token+'">専用ページ</a> から行えます（このURLは大切に保管してください）。'
+        ? base+'<br>状況の確認・メッセージのやり取りは <a href="https://rebridge-api.115en.com/t/'+j.token+'">専用ページ</a> から行えます（このURLは大切に保管してください）。'
         : base;
       msg.scrollIntoView({behavior:'smooth',block:'center'});
     }catch(_){ setMsg('送信できませんでした。少し時間をおいて、もう一度お試しください。',false); }

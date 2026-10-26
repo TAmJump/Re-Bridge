@@ -2,13 +2,14 @@ name = "rebridge-api"
 main = "worker.js"
 compatibility_date = "2025-06-01"
 
-# deploy 時に rebridge-api.tamjump.com を自動作成（DNS手動設定 不要）
+# deploy 時に rebridge-api.115en.com を自動作成（DNS手動設定 不要）
 routes = [
+  { pattern = "rebridge-api.115en.com", custom_domain = true },
   { pattern = "rebridge-api.tamjump.com", custom_domain = true }
 ]
 
 [vars]
-# Resend で認証済みの送信元に合わせる（tamjump.com が認証済みならこのままでOK）
+# Resend で認証済みの送信元に合わせる（115en.com が認証済みならこのままでOK）
 FROM_EMAIL = "Re-Bridge <noreply@tamjump.com>"
 
 # D1（必須）── JIN作業: `npx wrangler d1 create rebridge` で出た database_id を下に貼る
